@@ -1,0 +1,10 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Customers</mat-card-title>
+    <mat-card-subtitle>Overview</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+      <app-customer-filter [parameters]="parameters$ | async" (search)="onSearch($event)" [showFilter]="showFilter$ | async" (toggleFilterVisibility)="onToggleFilterVisibility()"></app-customer-filter>
+      <app-customer-list [data]="data$ | async" [parameters]="parameters$ | async" (search)="onSearch($event)"></app-customer-list>
+  </mat-card-content>
+</mat-card>

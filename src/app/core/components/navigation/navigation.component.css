@@ -1,0 +1,12 @@
+mat-sidenav {
+    width: 200px;
+}
+mat-sidenav>mat-nav-list>a>div {
+    padding-left:10px;
+}
+mat-sidenav-container {
+    height: calc(100% - 64px)
+}
+.fill-remaining-space {
+    flex: 1 1 auto;
+}

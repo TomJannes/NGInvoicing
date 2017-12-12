@@ -1,0 +1,24 @@
+<mat-table [dataSource]="dataSource" matSort (matSortChange)="onSort($event)" [matSortActive]="parameters.sorting.field"
+  [matSortDirection]="parameters.sorting.order">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef mat-sort-header="id" disableClear="true">Id</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header="name" disableClear="true">Name</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <button mat-icon-button [routerLink]="['/customers/edit', element.id]">
+        <mat-icon>mode_edit</mat-icon>
+      </button>
+      <mat-icon></mat-icon>
+    </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+<mat-paginator [length]="totalItemCount" [pageIndex]="parameters.pagination.currentPage - 1" [pageSize]="parameters.pagination.itemsPerPage"
+  (page)="onPageChange($event)"></mat-paginator>

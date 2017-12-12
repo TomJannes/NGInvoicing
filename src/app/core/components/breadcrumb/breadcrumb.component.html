@@ -1,0 +1,6 @@
+<mat-toolbar color="primary">
+  <ng-template ngFor let-breadcrumb [ngForOf]="breadcrumbs" let-isLast="last">
+    <a routerLink="{{breadcrumb.url}}">{{breadcrumb.label}}</a>
+    <mat-icon *ngIf="!isLast">navigate_next</mat-icon>
+  </ng-template>
+</mat-toolbar>

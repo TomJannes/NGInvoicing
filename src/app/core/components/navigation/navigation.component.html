@@ -1,0 +1,23 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened="{{showSideNav$ | async}}" #sidenav>
+    <mat-nav-list *ngFor="let navItem of navigationItems$ | async">
+      <a mat-list-item *ngIf="!navItem.subItems" [routerLink]="[navItem.url]" (click)="openSubItems(navItem)">{{navItem.title}}</a>
+      <a mat-list-item *ngIf="navItem.subItems" (click)="openSubItems(navItem)">
+        <span>{{navItem.title}}</span>
+        <span class="fill-remaining-space"></span>
+        <span>
+          <mat-icon *ngIf="openedSubMenu === navItem.id && navItem.subItems">keyboard_arrow_down</mat-icon>
+        </span>
+      </a>
+      <ng-container *ngIf="openedSubMenu === navItem.id && navItem.subItems">
+        <mat-nav-list *ngFor="let subItem of navItem.subItems">
+          <a mat-list-item [routerLink]="[subItem.url]" style="padding-left:10px;">{{subItem.title}}</a>
+        </mat-nav-list>
+      </ng-container>
+    </mat-nav-list>
+  </mat-sidenav>
+  <div>
+    <app-breadcrumb></app-breadcrumb>
+    <ng-content></ng-content>
+  </div>
+</mat-sidenav-container>

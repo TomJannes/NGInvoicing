@@ -1,0 +1,240 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "customer 1",
+      "type": {
+        "id": 1,
+        "name": "Company"
+      },
+      "address": {
+        "street": "streetken",
+        "number": "numberken",
+        "zip": "zipken",
+        "place": "plaatsken"
+      }
+    },
+    {
+      "id": 2,
+      "name": "customer 2",
+      "type": {
+        "id": 1,
+        "name": "Company"
+      },
+      "namex": "x"
+    },
+    {
+      "id": 3,
+      "name": "customer 3",
+      "type": {
+        "id": 1,
+        "name": "Company"
+      }
+    },
+    {
+      "id": 4,
+      "name": "customer 4",
+      "type": {
+        "id": 2,
+        "name": "Person"
+      }
+    },
+    {
+      "id": 5,
+      "name": "customer 5",
+      "type": {
+        "id": 1,
+        "name": "Company"
+      }
+    },
+    {
+      "id": 6,
+      "name": "customer 6",
+      "type": {
+        "id": 1,
+        "name": "Company"
+      }
+    },
+    {
+      "id": 7,
+      "name": "customer 7",
+      "type": {
+        "id": 1,
+        "name": "Company"
+      }
+    },
+    {
+      "id": 8,
+      "name": "customer 8",
+      "type": {
+        "id": 1,
+        "name": "Company"
+      }
+    },
+    {
+      "id": 9,
+      "name": "customer 9",
+      "type": {
+        "id": 1,
+        "name": "Company"
+      }
+    },
+    {
+      "id": 10,
+      "name": "c",
+      "type": {
+        "id": 2,
+        "name": "Person"
+      }
+    },
+    {
+      "id": 11,
+      "name": "c",
+      "type": {
+        "id": 2,
+        "name": "Person"
+      }
+    },
+    {
+      "id": 12,
+      "name": "c",
+      "type": {
+        "id": 2,
+        "name": "Person"
+      }
+    },
+    {
+      "id": 13,
+      "name": "c",
+      "type": {
+        "id": 2,
+        "name": "Person"
+      }
+    },
+    {
+      "id": 14,
+      "name": "c",
+      "type": {
+        "id": 2,
+        "name": "Person"
+      }
+    },
+    {
+      "id": 15,
+      "name": "c",
+      "type": {
+        "id": 2,
+        "name": "Person"
+      }
+    },
+    {
+      "id": 16,
+      "name": "c",
+      "type": {
+        "id": 2,
+        "name": "Person"
+      }
+    },
+    {
+      "id": 17,
+      "name": "c",
+      "type": {
+        "id": 2,
+        "name": "Person"
+      }
+    },
+    {
+      "id": 18,
+      "name": "c",
+      "type": {
+        "id": 2,
+        "name": "Person"
+      }
+    },
+    {
+      "id": 19,
+      "name": "c",
+      "type": {
+        "id": 2,
+        "name": "Person"
+      }
+    },
+    {
+      "id": 20,
+      "name": "c",
+      "type": {
+        "id": 2,
+        "name": "Person"
+      }
+    },
+    {
+      "id": 21,
+      "name": "c",
+      "type": {
+        "id": 2,
+        "name": "Person"
+      }
+    },
+    {
+      "id": 22,
+      "name": "c",
+      "type": {
+        "id": 2,
+        "name": "Person"
+      }
+    },
+    {
+      "id": 23,
+      "name": "c",
+      "type": {
+        "id": 2,
+        "name": "Person"
+      }
+    },
+    {
+      "id": 24,
+      "name": "c",
+      "type": {
+        "id": 2,
+        "name": "Person"
+      }
+    },
+    {
+      "id": 25,
+      "name": "c",
+      "type": {
+        "id": 2,
+        "name": "Person"
+      }
+    },
+    {
+      "id": 26,
+      "name": "c",
+      "type": {
+        "id": 2,
+        "name": "Person"
+      }
+    },
+    {
+      "id": 27,
+      "name": "c",
+      "type": {
+        "id": 2,
+        "name": "Person"
+      }
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Company"
+    },
+    {
+      "id": 2,
+      "name": "Person"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

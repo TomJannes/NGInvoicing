@@ -1,0 +1,27 @@
+{
+    "/*\\?pagination.itemsPerPage=:itemsPerPage&pagination.currentPage=:currentPage&sorting.field=:sortingField&sorting.order=:sortOrder": "/$1?_limit=:itemsPerPage&_page=:currentPage&_sort=:sortingField&_order=:sortOrder",
+    "/*\\?pagination.itemsPerPage=:itemsPerPage&pagination.currentPage=:currentPage": "/$1?_limit=:itemsPerPage&_page=:currentPage",
+
+    "/*\\?*&pagination.itemsPerPage=:itemsPerPage&pagination.currentPage=:currentPage": "/$1?$2&_limit=:itemsPerPage&_page=:currentPage",
+    "/*\\?*&pagination.itemsPerPage=:itemsPerPage&pagination.currentPage=:currentPage&sorting.field=:sortingField&sorting.order=:sortOrder": "/$1?$2&_limit=:itemsPerPage&_page=:currentPage&_sort=:sortingField&_order=:sortOrder",
+
+    "/*\\?pagination.currentPage=:currentPage": "/$1?_page=:currentPage",
+    "/*\\?pagination.currentPage=:currentPage&sorting.field=:sortingField&sorting.order=:sortOrder": "/$1?_page=:currentPage&_sort=:sortingField&_order=:sortOrder",
+
+    "/*\\?*&pagination.currentPage=:currentPage": "/$1?$2&_page=:currentPage",
+    "/*\\?*&pagination.currentPage=:currentPage&sorting.field=:sortingField&sorting.order=:sortOrder": "/$1?$2&_page=:currentPage&_sort=:sortingField&_order=:sortOrder",
+
+    "/*\\?pagination.itemsPerPage=:itemsPerPage&pagination.currentPage=:currentPage&*": "/$1?_limit=:itemsPerPage&_page=:currentPage&$2",
+    "/*\\?pagination.itemsPerPage=:itemsPerPage&pagination.currentPage=:currentPage&sorting.field=:sortingField&sorting.order=:sortOrder&*": "/$1?_limit=:itemsPerPage&_page=:currentPage&_sort=:sortingField&_order=:sortOrder&$2",
+
+    "/*\\?*&pagination.itemsPerPage=:itemsPerPage&pagination.currentPage=:currentPage&*": "/$1?$2&_limit=:itemsPerPage&_page=:currentPage&$3",
+    "/*\\?*&pagination.itemsPerPage=:itemsPerPage&pagination.currentPage=:currentPage&sorting.field=:sortingField&sorting.order=:sortOrder&*": "/$1?$2&_limit=:itemsPerPage&_page=:currentPage&_sort=:sortingField&_order=:sortOrder&$3",
+
+    "/*\\?pagination.currentPage=:currentPage&*": "/$1?_page=:currentPage&$2",
+    "/*\\?pagination.currentPage=:currentPage&sorting.field=:sortingField&sorting.order=:sortOrder&*": "/$1?_page=:currentPage&_sort=:sortingField&_order=:sortOrder&$2",
+
+    "/*\\?*&pagination.currentPage=:currentPage&*": "/$1?$2&_page=:currentPage&$3",
+    "/*\\?*&pagination.currentPage=:currentPage&sorting.field=:sortingField&sorting.order=:sortOrder&*": "/$1?$2&_page=:currentPage&_sort=:sortingField&_order=:sortOrder&$3",
+
+    "/*": "/$1"
+}
