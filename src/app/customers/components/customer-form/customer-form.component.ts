@@ -39,10 +39,6 @@ export class CustomerFormComponent implements OnInit {
     });
   }
 
-  compare(val1, val2) {
-    return val1 && val2 && val1.id === val2.id;
-  }
-
   submit() {
     FormHelper.validateAllFormFields(this.form);
     if (this.form.valid) {

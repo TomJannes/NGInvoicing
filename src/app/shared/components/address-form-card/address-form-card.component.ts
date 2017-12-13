@@ -10,8 +10,6 @@ import { ErrorStateMatcher } from '@angular/material';
   encapsulation: ViewEncapsulation.Emulated
 })
 export class AddressFormCardComponent implements OnInit {
-  // @Input() parent: FormGroup;
-  // @Input() groupName: string;
   constructor(public controlContainer: ControlContainer) {
   }
 

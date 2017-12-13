@@ -23,6 +23,7 @@ import { CustomerDetailCreateGuard } from './containers/customer-detail/customer
 import { CustomerDetailEditGuard } from './containers/customer-detail/customer-detail-edit.guard';
 import { SharedModule } from '../shared/shared.module';
 import { CustomerOverviewGuard } from './containers/customer-overview/customer-overview.guard';
+import { CustomerGeneralInfoFormCardComponent } from './components/general-info-form-card/general-info-form-card.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { CustomerOverviewGuard } from './containers/customer-overview/customer-o
     CustomerOverviewComponent,
     CustomerFormComponent,
     CustomerDetailComponent,
-    CustomerFilterComponent
+    CustomerFilterComponent,
+    CustomerGeneralInfoFormCardComponent
   ],
   providers: [
     CustomerService,
