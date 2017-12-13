@@ -18,7 +18,6 @@ export class CustomerDetailEditGuard implements CanActivate {
     constructor(private store: Store<fromCustomer.State>) {
     }
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
-        const id = route.params.id;
         return Observable.combineLatest(
                 this.TryLoadCustomerTypes(),
                 this.TryLoadCustomer(route.params.id)

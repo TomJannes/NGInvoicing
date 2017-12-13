@@ -18,7 +18,6 @@ export class CustomerDetailCreateGuard implements CanActivate {
     constructor(private store: Store<fromCustomer.State>) {
     }
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
-        const id = route.params.id;
         return this.TryLoadCustomerTypes()
             .filter((data) => {
                 return data[0] !== null && data[1] !== null;
