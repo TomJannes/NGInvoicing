@@ -34,23 +34,23 @@ export class CustomerDetailEffects {
                 });
         });
 
-        @Effect()
-        customerDetailSave$ = this.actions$.ofType<Save>(Act.SAVE)
-            .withLatestFrom(this.store)
-            .map(([action, state]) => state.customer.detail.customer)
-            .switchMap(customer => {
-                return this.customerService.saveCustomer(customer)
-                    .switchMap(data => {
-                        return [
-                            new Act.SaveSuccess({ data: data })
-                        ];
-                    })
-                    .catch((error) => {
-                        return [
-                            new Act.SaveFailed({ error: error })
-                        ];
-                    });
-            });
+    @Effect()
+    customerDetailSave$ = this.actions$.ofType<Save>(Act.SAVE)
+        .withLatestFrom(this.store)
+        .map(([action, state]) => state.customer.detail.customer)
+        .switchMap(customer => {
+            return this.customerService.saveCustomer(customer)
+                .switchMap(data => {
+                    return [
+                        new Act.SaveSuccess({ data: data })
+                    ];
+                })
+                .catch((error) => {
+                    return [
+                        new Act.SaveFailed({ error: error })
+                    ];
+                });
+        });
 
     constructor(private actions$: Actions, private customerService: CustomerService, private store: Store<fromCustomerDetail.State>) { }
 }

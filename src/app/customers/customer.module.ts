@@ -22,6 +22,7 @@ import { CustomerTypeService } from './services/customer-type.service';
 import { CustomerDetailCreateGuard } from './containers/customer-detail/customer-detail-create.guard';
 import { CustomerDetailEditGuard } from './containers/customer-detail/customer-detail-edit.guard';
 import { SharedModule } from '../shared/shared.module';
+import { CustomerOverviewGuard } from './containers/customer-overview/customer-overview.guard';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { SharedModule } from '../shared/shared.module';
     CustomerService,
     CustomerTypeService,
     CustomerDetailCreateGuard,
-    CustomerDetailEditGuard
+    CustomerDetailEditGuard,
+    CustomerOverviewGuard
   ]
 })
 export class CustomerModule { }

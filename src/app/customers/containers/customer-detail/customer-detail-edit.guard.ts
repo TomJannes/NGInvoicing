@@ -9,6 +9,7 @@ import * as CustomerTypeActions from '../../actions/customer-type';
 import * as CustomerDetailActions from '../../actions/customer-detail';
 import { of } from 'rxjs/observable/of';
 import { Customer } from '../../model/customer';
+import 'rxjs/add/observable/combineLatest';
 
 @Injectable()
 export class CustomerDetailEditGuard implements CanActivate {

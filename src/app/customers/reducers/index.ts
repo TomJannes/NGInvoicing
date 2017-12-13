@@ -28,6 +28,8 @@ export const getCustomerState = createFeatureSelector<CustomerState>('customer')
 export const getCustomerEntitiesState = createSelector(getCustomerState, state => state.overview);
 export const getCustomers = createSelector(getCustomerEntitiesState, fromCustomer.getCustomers);
 export const getCustomerParameters = createSelector(getCustomerEntitiesState, fromCustomer.getCustomerParameters);
+export const getCustomerIsLoading = createSelector(getCustomerEntitiesState, fromCustomer.getIsLoading);
+export const getIsCustomerLoadSuccess = createSelector(getCustomerEntitiesState, fromCustomer.getIsLoadSuccess);
 
 export const getLayoutState = createSelector(getCustomerState, state => state.layout);
 export const getFilterLayout = createSelector(getLayoutState, fromLayout.getFilterLayout);

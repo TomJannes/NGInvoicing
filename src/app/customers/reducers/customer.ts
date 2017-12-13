@@ -19,6 +19,12 @@ const initialState: State = {
 
 export function reducer(state = initialState, action: customer.Actions): State {
     switch (action.type) {
+        case customer.RESET_SEARCH_PARAMS:
+            return {
+                ...initialState,
+                isLoading: true,
+                isLoadSuccess: false,
+            };
         case customer.UPDATE_SEARCH_PARAMS:
             return {
                 ...state,

@@ -4,10 +4,11 @@ import { CustomerDetailComponent } from './containers/customer-detail/customer-d
 import { CustomerOverviewComponent } from './containers/customer-overview/customer-overview.component';
 import { CustomerDetailCreateGuard } from './containers/customer-detail/customer-detail-create.guard';
 import { CustomerDetailEditGuard } from './containers/customer-detail/customer-detail-edit.guard';
+import { CustomerOverviewGuard } from './containers/customer-overview/customer-overview.guard';
 
 const routes: Routes = [
     { path: '', redirectTo: 'overview', pathMatch: 'full' },
-    { path: 'overview', component: CustomerOverviewComponent, data: { breadcrumb: 'Overview' } },
+    { path: 'overview', component: CustomerOverviewComponent, canActivate: [CustomerOverviewGuard], data: { breadcrumb: 'Overview' } },
     { path: 'create', component: CustomerDetailComponent, canActivate: [CustomerDetailCreateGuard], data: { breadcrumb: 'Create' } },
     { path: 'edit/:id', component: CustomerDetailComponent, canActivate: [CustomerDetailEditGuard], data: { breadcrumb: 'Edit' } }
 ];

@@ -33,28 +33,14 @@ export class CustomerEffects {
                     ];
                 });
         });
-
+    
     @Effect()
-    updateSearchParameters$ = this.actions$.ofType(Act.UPDATE_SEARCH_PARAMS)
+    updateSearchParameters$ = this.actions$.ofType(Act.UPDATE_SEARCH_PARAMS, Act.RESET_SEARCH_PARAMS)
         .switchMap(() => {
             return [
                 new Act.Search()
             ];
         });
-
-    @Effect()
-    navigateToCustomers$ = this.actions$.ofType(ROUTER_NAVIGATION)
-        .map(this.toRouterStateUrl)
-        .filter(state => state.url.indexOf('customers/overview') !== -1)
-        .switchMap((route) => {
-            return [
-                new Act.Search()
-            ];
-        });
-
-    toRouterStateUrl(r: RouterNavigationAction<RouterStateUrl>): RouterStateUrl {
-        return r.payload.routerState;
-    }
 
     constructor(private actions$: Actions, private customerService: CustomerService, private store: Store<fromCustomer.State>) { }
 }
