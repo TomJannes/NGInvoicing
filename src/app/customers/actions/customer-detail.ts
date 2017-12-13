@@ -2,6 +2,7 @@ import { Action } from '@ngrx/store';
 import { State } from '../reducers/customer-detail';
 
 export const GET = '[Customer Detail] Search';
+export const RESET = '[Customer Detail] Reset';
 export const GET_SUCCESS = '[Customer Detail] Search Success';
 export const GET_FAILED = '[Customer Detail] Search Failed';
 
@@ -14,6 +15,11 @@ export const SAVE_FAILED = '[Customer Detail] Save Failed';
 export class Get implements Action {
     readonly type = GET;
     constructor(public id: number) {}
+}
+
+export class Reset implements Action {
+    readonly type = RESET;
+    constructor() {}
 }
 
 export class GetSuccess implements Action {
@@ -46,4 +52,4 @@ export class SaveFailed implements Action {
     constructor(public payload: any) {}
 }
 
-export type Actions = Get | GetSuccess | GetFailed | FormUpdate | Save | SaveSuccess | SaveFailed;
+export type Actions = Reset | Get | GetSuccess | GetFailed | FormUpdate | Save | SaveSuccess | SaveFailed;

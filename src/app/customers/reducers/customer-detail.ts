@@ -17,6 +17,12 @@ const initialState: State = {
 
 export function reducer(state = initialState, action: customer.Actions): State {
     switch (action.type) {
+        case customer.RESET:
+            return {
+                ...initialState,
+                isLoading: true,
+                isLoadSuccess: false,
+            };
         case customer.GET:
             return {
                 ...state,

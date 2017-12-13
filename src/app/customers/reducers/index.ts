@@ -39,3 +39,4 @@ export const getCustomerTypes = createSelector(getTypeState, fromTypes.getCustom
 
 export const getDetailState = createSelector(getCustomerState, state => state.detail);
 export const getSelectedCustomer = createSelector(getDetailState, fromDetail.getCustomer);
+export const getIsCustomerDetailLoadsuccess = createSelector(getDetailState, fromDetail.getIsLoadSuccess);
