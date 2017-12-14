@@ -17,6 +17,7 @@ import { routes } from './app.routes';
 import { EffectsModule } from '@ngrx/effects';
 import { AppComponent } from './core/containers/app/app.component';
 import { reducers, metaReducers } from './reducers';
+import { RouterEffects } from './shared/router/router.effects';
 
 @NgModule({
   imports: [
@@ -60,7 +61,7 @@ import { reducers, metaReducers } from './reducers';
      *
      * See: https://github.com/ngrx/platform/blob/master/docs/effects/api.md#forroot
      */
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([RouterEffects]),
     CoreModule.forRoot()
   ],
   providers: [

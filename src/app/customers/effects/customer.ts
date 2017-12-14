@@ -33,7 +33,7 @@ export class CustomerEffects {
                     ];
                 });
         });
-    
+
     @Effect()
     updateSearchParameters$ = this.actions$.ofType(Act.UPDATE_SEARCH_PARAMS, Act.RESET_SEARCH_PARAMS)
         .switchMap(() => {

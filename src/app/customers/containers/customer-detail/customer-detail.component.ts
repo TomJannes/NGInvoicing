@@ -5,6 +5,7 @@ import { Customer } from '../../model/customer';
 import { Store } from '@ngrx/store';
 import * as fromCustomer from '../../reducers';
 import * as CustomerActions from '../../actions/customer-detail';
+import * as RouterActions from '../../../shared/router/router.actions';
 
 @Component({
   selector: 'app-customer-detail',
@@ -23,5 +24,10 @@ export class CustomerDetailComponent {
 
   save() {
     this.store.dispatch(new CustomerActions.Save());
+  }
+
+  cancel() {
+    this.store.dispatch(new CustomerActions.Reset());
+    this.store.dispatch(new RouterActions.Back());
   }
 }

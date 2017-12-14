@@ -19,6 +19,7 @@ export class CustomerFormComponent implements OnInit {
   @Input() customerTypes: CustomerTypeSearchResult;
   @Input() customer: Customer;
   @Output() save: EventEmitter<any> = new EventEmitter<any>();
+  @Output() cancel: EventEmitter<any> = new EventEmitter<any>();
   actionType: any;
   successMessage: string;
 
@@ -34,21 +35,22 @@ export class CustomerFormComponent implements OnInit {
         number: ['', Validators.required],
         bus: ['', Validators.required],
         zip: ['', Validators.required],
-        place: ['', Validators.required] 
+        place: ['', Validators.required]
       })
     });
   }
 
-  submit() {
+  onSubmit() {
     FormHelper.validateAllFormFields(this.form);
     if (this.form.valid) {
       this.save.emit(null);
     }
   }
 
-  ngOnInit() {
+  onCancel() {
+    this.cancel.emit(null);
   }
 
-  
-
+  ngOnInit() {
+  }
 }
