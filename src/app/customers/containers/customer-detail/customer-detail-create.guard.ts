@@ -22,9 +22,7 @@ export class CustomerDetailCreateGuard implements CanActivate {
             return data[0] !== null && data[1] !== null;
         })
         .switchMap(() => of(true))
-        .catch(() => {
-            return of(false)
-        });
+        .catch(() => of(false));
     }
 
     private tryLoadCustomerTypes(): Observable<CustomerTypeSearchResult> {

@@ -36,7 +36,7 @@ export class CustomerDetailEditGuard implements CanActivate {
     }
 
     private TryLoadCustomer(id: number): Observable<Customer> {
-        return PreloadHelper.preloadData<Customer>(
+        return PreloadHelper.preloadDataAllways<Customer>(
             this.store,
             fromCustomer.getSelectedCustomer,
             new CustomerDetailActions.Get(id),
