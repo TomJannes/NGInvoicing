@@ -1,9 +1,10 @@
 import { Directive, OnInit, OnDestroy, Input } from '@angular/core';
-import { FormGroupDirective } from '@angular/forms';
+import { FormGroupDirective, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Store, Action } from '@ngrx/store';
 import { MemoizedSelector } from '@ngrx/store/src/selector';
 import { Subscription } from 'rxjs/Subscription';
 import { Actions } from '@ngrx/effects';
+import { FormArray, AbstractControl } from '@angular/forms/src/model';
 
 @Directive({
     selector: '[appConnectForm]'

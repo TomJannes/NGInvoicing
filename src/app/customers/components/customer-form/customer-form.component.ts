@@ -6,7 +6,8 @@ import { Observable } from 'rxjs/Observable';
 import * as fromCustomer from '../../actions/customer-detail';
 import { EventEmitter } from '@angular/core';
 import { FormHelper } from '../../../shared/form-helper';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { CustomerContactFormCardComponent } from '../customer-contact-form-card/customer-contact-form-card.component';
 
 @Component({
   selector: 'app-customer-form',
@@ -37,7 +38,14 @@ export class CustomerFormComponent implements OnInit {
         zip: ['', Validators.required],
         place: ['', Validators.required]
       }),
-      contacts: fb.array([this.createContact()])
+      contacts: fb.array([])
+    });
+  }
+
+  ngOnInit() {
+    let control = <FormArray>this.form.controls.contacts;
+    this.customer.contacts.forEach(x => {
+      control.push(this.createContact());
     });
   }
 
@@ -67,6 +75,5 @@ export class CustomerFormComponent implements OnInit {
     this.cancel.emit(null);
   }
 
-  ngOnInit() {
-  }
+  
 }

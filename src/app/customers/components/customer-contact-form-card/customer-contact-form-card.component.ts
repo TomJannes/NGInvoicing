@@ -13,4 +13,12 @@ export class CustomerContactFormCardComponent implements OnInit {
   ngOnInit() {
   }
 
+  onRemove(index) {
+    console.log('removing index ' + index);
+  }
+
+  onAddNew() {
+    console.log('add new line');
+  }
+
 }

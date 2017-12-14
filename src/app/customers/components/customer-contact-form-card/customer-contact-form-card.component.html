@@ -4,26 +4,29 @@
       <mat-card-title>Contacts</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <div formArrayName="contacts" *ngFor="let contact of controlContainer.control.get('contacts').controls; let i = index;">
+      <div formArrayName="contacts" *ngFor="let contact of controlContainer.control.get('contacts').controls; let i = index;let last = last">
         <div [formGroupName]="i">
           <input type="hidden" [value]="id">
           <mat-form-field>
             <input matInput formControlName="firstName">
           </mat-form-field>
+          <mat-form-field>
+            <input matInput formControlName="lastName">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput formControlName="email">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput formControlName="phone">
+          </mat-form-field>
+          <button mat-icon-button type="button" (click)="onRemove(i)">
+            <mat-icon>remove_circle_outline</mat-icon>
+          </button>
+          <button mat-icon-button type="button" (click)="onAddNew()" *ngIf="last">
+            <mat-icon>add_circle_outline</mat-icon>
+          </button>
         </div>
       </div>
-      FUCK: {{ controlContainer.control?.contacts | json }}
-
-
-      <!-- <mat-form-field>
-        <mat-select placeholder="Type" formControlName="type" [compareWith]="compare">
-          <mat-option *ngFor="let type of customerTypes?.customerTypes" [value]="type">{{ type.name }}</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput required formControlName="name">
-        <mat-error>This field is required</mat-error>
-      </mat-form-field> -->
     </mat-card-content>
   </mat-card>
 </ng-container>
