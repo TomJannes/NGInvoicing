@@ -12,7 +12,11 @@
         "number": "numberken",
         "zip": "zipken",
         "place": "plaatsken"
-      }
+      },
+      "contacts": [
+        { "id": 1, "firstName": "John", "lastName": "Doe", "email": "john.doe@lalaland.be", "phone": "12345678" },
+        { "id": 2, "firstName": "Joe", "lastName": "Fucko", "email": "joe.fucko@lalaland.be", "phone": "12345678" }
+      ]
     },
     {
       "id": 2,

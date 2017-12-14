@@ -9,7 +9,7 @@ import { CustomerTypeSearchResult } from '../../model/results/customer-type-sear
 })
 export class CustomerGeneralInfoFormCardComponent implements OnInit {
   @Input() customerTypes: CustomerTypeSearchResult;
-  
+
   constructor(public controlContainer: ControlContainer) { }
 
   ngOnInit() {

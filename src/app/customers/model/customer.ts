@@ -6,4 +6,13 @@ export interface Customer {
     name?: string;
     customerType?: CustomerType;
     address?: Address;
+    contacts: Contact[];
+}
+
+export interface Contact {
+    id: number;
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
 }

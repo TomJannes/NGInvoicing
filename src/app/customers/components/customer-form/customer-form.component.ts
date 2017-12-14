@@ -36,9 +36,25 @@ export class CustomerFormComponent implements OnInit {
         bus: ['', Validators.required],
         zip: ['', Validators.required],
         place: ['', Validators.required]
-      })
+      }),
+      contacts: fb.array([this.createContact()])
     });
   }
+
+  createContact(): FormGroup {
+    return this.fb.group({
+      id: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: ''
+    });
+  }
+
+  // "contacts": [
+  //   { "id": 1, "firstName": "John", "lastName": "Doe", "email": "john.doe@lalaland.be", "phone": "12345678" },
+  //   { "id": 2, "firstName": "Joe", "lastName": "Fucko", "email": "joe.fucko@lalaland.be", "phone": "12345678" }
+  // ]
 
   onSubmit() {
     FormHelper.validateAllFormFields(this.form);

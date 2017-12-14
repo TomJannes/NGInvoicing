@@ -12,7 +12,7 @@ const initialState: State = {
     isLoading: false,
     isLoadSuccess: false,
     selectedId: 0,
-    customer: { id: 0 }
+    customer: { id: 0, contacts: [] }
 };
 
 export function reducer(state = initialState, action: customer.Actions): State {
