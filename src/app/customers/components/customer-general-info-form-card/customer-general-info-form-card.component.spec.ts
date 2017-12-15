@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CustomerGeneralInfoFormCardComponent } from './general-info-form-card.component';
+import { CustomerGeneralInfoFormCardComponent } from './customer-general-info-form-card.component';
 
 describe('GeneralInfoFormCardComponent', () => {
   let component: CustomerGeneralInfoFormCardComponent;

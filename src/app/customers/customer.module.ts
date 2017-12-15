@@ -23,7 +23,7 @@ import { CustomerDetailCreateGuard } from './containers/customer-detail/customer
 import { CustomerDetailEditGuard } from './containers/customer-detail/customer-detail-edit.guard';
 import { SharedModule } from '../shared/shared.module';
 import { CustomerOverviewGuard } from './containers/customer-overview/customer-overview.guard';
-import { CustomerGeneralInfoFormCardComponent } from './components/general-info-form-card/general-info-form-card.component';
+import { CustomerGeneralInfoFormCardComponent } from './components/customer-general-info-form-card/customer-general-info-form-card.component';
 import { CustomerContactFormCardComponent } from './components/customer-contact-form-card/customer-contact-form-card.component';
 
 
