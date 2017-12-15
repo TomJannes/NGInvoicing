@@ -3,6 +3,7 @@
     {
       "id": 1,
       "name": "customer 1",
+      "kbo": "0123456789",
       "type": {
         "id": 1,
         "name": "Company"

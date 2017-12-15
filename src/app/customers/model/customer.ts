@@ -4,6 +4,7 @@ import { Address } from '../../shared/models/address';
 export interface Customer {
     id: number;
     name?: string;
+    kbo?: string;
     customerType?: CustomerType;
     address?: Address;
     contacts: Contact[];

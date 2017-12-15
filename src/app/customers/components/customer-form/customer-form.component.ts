@@ -31,6 +31,7 @@ export class CustomerFormComponent implements OnInit {
     this.form = fb.group({
       type: null,
       name: ['', Validators.required],
+      kbo: '',
       address: fb.group({
         street: ['', Validators.required],
         number: ['', Validators.required],
@@ -58,11 +59,6 @@ export class CustomerFormComponent implements OnInit {
       phone: ''
     });
   }
-
-  // "contacts": [
-  //   { "id": 1, "firstName": "John", "lastName": "Doe", "email": "john.doe@lalaland.be", "phone": "12345678" },
-  //   { "id": 2, "firstName": "Joe", "lastName": "Fucko", "email": "joe.fucko@lalaland.be", "phone": "12345678" }
-  // ]
 
   onSubmit() {
     FormHelper.validateAllFormFields(this.form);
