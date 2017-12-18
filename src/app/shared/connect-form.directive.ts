@@ -5,6 +5,7 @@ import { MemoizedSelector } from '@ngrx/store/src/selector';
 import { Subscription } from 'rxjs/Subscription';
 import { Actions } from '@ngrx/effects';
 import { FormArray, AbstractControl } from '@angular/forms/src/model';
+import 'rxjs/add/operator/debounceTime';
 
 @Directive({
     selector: '[appConnectForm]'
@@ -26,12 +27,6 @@ export class ConnectFormDirective implements OnInit, OnDestroy {
         this.formChange = this.formGroupDirective.form.valueChanges.debounceTime(500).subscribe(formValue => {
             this.store.dispatch(new this.changeAction({ data: { ...this.data, ...formValue } }));
         });
-
-        // this.formSuccess = this.actions$
-        //     .ofType(this.successMessage)
-        //     .subscribe(() => {
-        //         this.formGroupDirective.form.reset();
-        //     });
     }
 
     ngOnDestroy(): void {

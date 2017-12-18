@@ -1,5 +1,6 @@
 import { Action } from '@ngrx/store';
 
+export const RESET = '[Profile] Reset';
 export const GET = '[Profile] Search';
 export const GET_SUCCESS = '[Profile] Search Success';
 export const GET_FAILED = '[Profile] Search Failed';
@@ -9,10 +10,14 @@ export const SAVE = '[Profile] Save';
 export const SAVE_SUCCESS = '[Profile] Save Success';
 export const SAVE_FAILED = '[Profile] Save Failed';
 
+export class Reset implements Action {
+    readonly type = RESET;
+    constructor() {}
+}
 
 export class Get implements Action {
     readonly type = GET;
-    constructor(public id: number) {}
+    constructor() {}
 }
 
 export class GetSuccess implements Action {
@@ -45,4 +50,4 @@ export class SaveFailed implements Action {
     constructor(public payload: any) {}
 }
 
-export type Actions = Get | GetSuccess | GetFailed | FormUpdate | Save | SaveSuccess | SaveFailed;
+export type Actions = Reset | Get | GetSuccess | GetFailed | FormUpdate | Save | SaveSuccess | SaveFailed;

@@ -15,6 +15,12 @@ const initialState: State = {
 
 export function reducer(state = initialState, action: profile.Actions): State {
     switch (action.type) {
+        case profile.RESET:
+            return {
+                ...initialState,
+                isLoading: true,
+                isLoadSuccess: false,
+            };
         case profile.GET:
             return {
                 ...state,

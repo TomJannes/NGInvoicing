@@ -1,0 +1,17 @@
+<ng-container [formGroup]="controlContainer.control">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>General Information</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput required formControlName="name" placeholder="Name">
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput required formControlName="kbo" placeholder="KBO number">
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+</ng-container>

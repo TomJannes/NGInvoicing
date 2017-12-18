@@ -304,6 +304,15 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "id": 1,
+    "name": "Next Gen Consult",
+    "kbo": "0123456789",
+    "address": {
+      "street": "Home Street",
+      "number": "16",
+      "bus": "",
+      "zip": "2000",
+      "place": "Antwerpen"
+    }
   }
 }

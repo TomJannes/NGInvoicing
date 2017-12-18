@@ -13,6 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { SharedModule } from '../shared/shared.module';
 import { ProfileDetailComponent } from './containers/profile-detail/profile-detail.component';
+import { ProfileFormComponent } from './components/profile-form/profile-form.component';
+import { ProfileGeneralInfoFormCardComponent } from './components/profile-general-info-form-card/profile-general-info-form-card.component';
+import { ProfileDetailEditGuard } from './containers/profile-detail/profile-detail-edit.guard';
 
 
 @NgModule({
@@ -28,9 +31,12 @@ import { ProfileDetailComponent } from './containers/profile-detail/profile-deta
     SharedModule
   ],
   declarations: [
-    ProfileDetailComponent
+    ProfileDetailComponent,
+    ProfileFormComponent,
+    ProfileGeneralInfoFormCardComponent
   ],
   providers: [
+    ProfileDetailEditGuard,
     ProfileService
   ]
 })

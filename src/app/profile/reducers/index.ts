@@ -18,5 +18,5 @@ export const reducers: ActionReducerMap<any> = {
 export const getProfileState = createFeatureSelector<ProfileState>('profile');
 export const getProfileEntitiesState = createSelector(getProfileState, state => state.detail);
 export const getProfile = createSelector(getProfileEntitiesState, state => state.profile);
-export const getCustomerIsLoading = createSelector(getProfileEntitiesState, fromProfile.getIsLoading);
-export const getIsCustomerLoadSuccess = createSelector(getProfileEntitiesState, fromProfile.getIsLoadSuccess);
+export const getProfileIsLoading = createSelector(getProfileEntitiesState, fromProfile.getIsLoading);
+export const getIsProfileLoadSuccess = createSelector(getProfileEntitiesState, fromProfile.getIsLoadSuccess);
