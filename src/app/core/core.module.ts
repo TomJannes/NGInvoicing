@@ -9,19 +9,8 @@ import { CommonModule } from '@angular/common';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { MaterialModule } from './../material.module';
 
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-
-
-// import { AppComponent } from './containers/app';
-// import { NotFoundPageComponent } from './containers/not-found-page';
-// import { LayoutComponent } from './components/layout';
-// import { NavItemComponent } from './components/nav-item';
-// import { SidenavComponent } from './components/sidenav';
-// import { ToolbarComponent } from './components/toolbar';
-// import { MaterialModule } from '../material';
-
-// import { GoogleBooksService } from './services/google-books';
+// import { StoreModule } from '@ngrx/store';
+// import { EffectsModule } from '@ngrx/effects';
 
 export const COMPONENTS = [
   ToolbarComponent,

@@ -2,7 +2,7 @@
   "customer": [
     {
       "id": 1,
-      "name": "customer 1",
+      "name": "Test BVBA",
       "kbo": "0123456789",
       "type": {
         "id": 1,
@@ -11,12 +11,25 @@
       "address": {
         "street": "streetken",
         "number": "numberken",
+        "bus": "",
         "zip": "zipken",
         "place": "plaatsken"
       },
       "contacts": [
-        { "id": 1, "firstName": "John", "lastName": "Doe", "email": "john.doe@lalaland.be", "phone": "12345678" },
-        { "id": 2, "firstName": "Joe", "lastName": "Fucko", "email": "joe.fucko@lalaland.be", "phone": "12345678" }
+        {
+          "firstName": "John",
+          "lastName": "Doe",
+          "email": "john.doe@lalaland.be",
+          "phone": "12345678",
+          "info": ""
+        },
+        {
+          "firstName": "Joe",
+          "lastName": "Fucko",
+          "email": "joe.fucko@lalaland.be",
+          "phone": "12345678",
+          "info": ""
+        }
       ]
     },
     {
@@ -226,6 +239,57 @@
       "type": {
         "id": 2,
         "name": "Person"
+      }
+    },
+    {
+      "id": 28,
+      "contacts": [],
+      "type": {
+        "id": 1,
+        "name": "Company"
+      },
+      "name": "another test",
+      "kbo": "",
+      "address": {
+        "street": "ijio",
+        "number": "jiojiojio",
+        "bus": "jiojioj",
+        "zip": "iojioj",
+        "place": "iojio"
+      }
+    },
+    {
+      "id": 29,
+      "contacts": [],
+      "type": {
+        "id": 1,
+        "name": "Company"
+      },
+      "name": "another testx",
+      "kbo": "",
+      "address": {
+        "street": "ijio",
+        "number": "jiojiojio",
+        "bus": "jiojioj",
+        "zip": "iojioj",
+        "place": "iojio"
+      }
+    },
+    {
+      "id": 30,
+      "contacts": [],
+      "type": {
+        "id": 2,
+        "name": "Person"
+      },
+      "name": "dfdfd",
+      "kbo": "",
+      "address": {
+        "street": "cgdfgh",
+        "number": "fh",
+        "bus": "fgh",
+        "zip": "fgh",
+        "place": "fgh"
       }
     }
   ],

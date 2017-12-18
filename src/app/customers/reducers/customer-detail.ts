@@ -30,6 +30,7 @@ export function reducer(state = initialState, action: customer.Actions): State {
                 isLoading: true,
                 isLoadSuccess: false
             };
+        case customer.SAVE_SUCCESS:
         case customer.FORM_UPDATE:
         case customer.GET_SUCCESS:
             return {
@@ -38,6 +39,7 @@ export function reducer(state = initialState, action: customer.Actions): State {
                 isLoadSuccess: true,
                 customer: action.payload.data
             };
+        case customer.SAVE_FAILED:
         case customer.GET_FAILED:
             return {
                 ...state,
