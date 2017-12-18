@@ -28,6 +28,6 @@ export class CustomerDetailComponent {
 
   cancel() {
     this.store.dispatch(new CustomerActions.Reset());
-    this.store.dispatch(new RouterActions.Back());
+    this.store.dispatch(new RouterActions.Go({ path: ['/customers/overview'] }));
   }
 }
