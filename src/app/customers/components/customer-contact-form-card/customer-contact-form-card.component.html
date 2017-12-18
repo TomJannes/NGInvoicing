@@ -13,7 +13,7 @@
       </mat-card-title>
     </mat-card-header>
     <mat-card-content class="contactgrid">
-      <div formArrayName="contacts" *ngFor="let contact of controlContainer.control.get('contacts').controls; let i = index;let last = last">
+      <div formArrayName="contacts" *ngFor="let contact of controlContainer.control.get('contacts')['controls']; let i = index;let last = last">
         <div [formGroupName]="i">
           <mat-card>
             <mat-card-header>
