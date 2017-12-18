@@ -7,14 +7,12 @@ import { MaterialModule } from './../material.module';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers';
 import { ProfileEffects } from './effects/profile';
-import { CustomerDetailEffects } from './effects/customer-detail';
 import { EffectsModule } from '@ngrx/effects';
 import { ProfileService } from './services/profile.service';
 import { HttpClientModule } from '@angular/common/http';
 
-
-
 import { SharedModule } from '../shared/shared.module';
+import { ProfileDetailComponent } from './containers/profile-detail/profile-detail.component';
 
 
 @NgModule({
@@ -31,6 +29,9 @@ import { SharedModule } from '../shared/shared.module';
   ],
   declarations: [
     ProfileDetailComponent
+  ],
+  providers: [
+    ProfileService
   ]
 })
 export class ProfileModule { }

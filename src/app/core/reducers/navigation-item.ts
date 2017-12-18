@@ -17,7 +17,7 @@ const initialState: NavigationItemState = {
       { id: 3, title: 'Overview', url: '/customers/overview' },
       { id: 4, title: 'Create', url: '/customers/create' }
     ] },
-    { id: 5, title: 'ac', url: 'ac' },
+    { id: 5, title: 'Profile', url: '/profile' },
     { id: 6, title: 'ad', url: 'ad' },
     { id: 7, title: 'ae', subItems: [
       { id: 8, title: 'aab', url: 'aab' },
