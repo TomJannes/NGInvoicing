@@ -17,13 +17,11 @@ const initialState: NavigationItemState = {
       { id: 3, title: 'Overview', url: '/customers/overview' },
       { id: 4, title: 'Create', url: '/customers/create' }
     ] },
-    { id: 5, title: 'Profile', url: '/profile' },
-    { id: 6, title: 'ad', url: 'ad' },
-    { id: 7, title: 'ae', subItems: [
-      { id: 8, title: 'aab', url: 'aab' },
-      { id: 9, title: 'abc', url: 'aac' },
+    { id: 5, title: 'Skus', url: '/skus', subItems: [
+      { id: 6, title: 'Overview', url: '/skus/overview' },
+      { id: 7, title: 'Create', url: '/skus/create' }
     ] },
-    { id: 10, title: 'aa', url: 'aa' }
+    { id: 8, title: 'Profile', url: '/profile' },
   ]
 };
 

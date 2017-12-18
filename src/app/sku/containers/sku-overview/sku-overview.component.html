@@ -1,0 +1,10 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Stock keeping units</mat-card-title>
+    <mat-card-subtitle>Overview</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+      <app-sku-filter [parameters]="parameters$ | async" (search)="onSearch($event)" [showFilter]="showFilter$ | async" (toggleFilterVisibility)="onToggleFilterVisibility()"></app-sku-filter>
+      <app-sku-list [data]="data$ | async" [parameters]="parameters$ | async" (search)="onSearch($event)"></app-sku-list>
+  </mat-card-content>
+</mat-card>

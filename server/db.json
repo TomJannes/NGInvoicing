@@ -303,6 +303,12 @@
       "name": "Person"
     }
   ],
+  "sku": [
+    { 
+      "id": 1,
+      "name": "1 hour consultancy - 100%"
+    }
+  ],
   "profile": {
     "id": 1,
     "name": "Next Gen Consult",
