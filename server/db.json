@@ -317,6 +317,41 @@
       "price": 71
     }
   ],
+  "invoice": [
+    {
+      "id": 1,
+      "number": "201700001",
+      "creationDate": "01/01/2017",
+      "customer": {
+        "id": 1,
+        "name": "Test BVBA",
+        "kbo": "0123456789",
+        "type": {
+          "id": 1,
+          "name": "Company"
+        },
+        "address": {
+          "street": "streetken",
+          "number": "numberken",
+          "bus": "",
+          "zip": "2610",
+          "place": "plaatsken"
+        },
+        "contacts": []
+      },
+      "lines": [
+        {  
+          "sku": {
+            "id": 1,
+            "name": "1 hour consultancy - 100%",
+            "vat": 21.5,
+            "price": 71.25
+          },
+          "amount": 8
+        }
+      ]
+    }
+  ],
   "profile": {
     "id": 1,
     "name": "Next Gen Consult",

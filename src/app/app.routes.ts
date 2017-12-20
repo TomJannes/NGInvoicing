@@ -8,6 +8,7 @@ export const routes: Routes = [
   { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
   { path: 'customers', loadChildren: './customers/customer.module#CustomerModule', data: { breadcrumb: 'Customers' } },
   { path: 'skus', loadChildren: './sku/sku.module#SkuModule', data: { breadcrumb: 'Stock keeping units' } },
+  { path: 'invoices', loadChildren: './invoice/invoice.module#InvoiceModule', data: { breadcrumb: 'Invoices' } },
   { path: 'profile', loadChildren: './profile/profile.module#ProfileModule' },
   { path: '**', component: NotFoundPageComponent, data: { breadcrumb: 'Not found' } },
 ];

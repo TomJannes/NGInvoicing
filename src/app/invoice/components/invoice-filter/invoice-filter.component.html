@@ -1,0 +1,20 @@
+<div style="display: flex; justify-content: space-between">
+  <div>
+    <form [formGroup]="searchForm" *ngIf="showFilter">
+      <mat-form-field>
+        <input matInput placeholder="Id" formControlName="id" value="{{parameters.id}}" type="number">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name" value="{{parameters.name}}" type="text">
+      </mat-form-field>
+      <button mat-icon-button type="button" (click)="onSearch()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </form>
+  </div>
+  <div>
+    <button mat-icon-button type="button" (click)="toggleFilter()">
+      <mat-icon>filter_list</mat-icon>
+    </button>
+  </div>
+</div>
