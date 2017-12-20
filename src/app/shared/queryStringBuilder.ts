@@ -47,7 +47,7 @@ export class QueryStringBuilder {
             this.params = this.params.append(key, value.toISOString());
         } else if (value instanceof Object) {
             return this.PopulateObject(key, value);
-        } else if (value === '') {
+        } else if (value === '' || value === null || value === undefined) {
             // ignore empty value
         } else {
             this.params = this.params.append(key, value.toString());
