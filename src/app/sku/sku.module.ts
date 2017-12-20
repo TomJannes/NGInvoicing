@@ -27,10 +27,12 @@ import { SkuOverviewGuard } from './containers/sku-overview/sku-overview.guard';
 import { SkuService } from './services/sku.service';
 import { SkuListComponent } from './components/sku-list/sku-list.component';
 import { SkuFilterComponent } from './components/sku-filter/sku-filter.component';
-// import { CustomerOverviewGuard } from './containers/customer-overview/customer-overview.guard';
-// import { CustomerGeneralInfoFormCardComponent } from './components/customer-general-info-form-card/customer-general-info-form-card.component';
-// import { CustomerContactFormCardComponent } from './components/customer-contact-form-card/customer-contact-form-card.component';
-
+import { SkuGeneralInfoFormCardComponent } from './components/sku-general-info-form-card/sku-general-info-form-card.component';
+import { SkuFormComponent } from './components/sku-form/sku-form.component';
+import { SkuDetailComponent } from './containers/sku-detail/sku-detail.component';
+import { SkuDetailCreateGuard } from './containers/sku-detail/sku-detail-create.guard';
+import { SkuDetailEditGuard } from './containers/sku-detail/sku-detail-edit.guard';
+import { SkuDetailEffects } from './effects/sku-detail';
 
 @NgModule({
   imports: [
@@ -40,24 +42,22 @@ import { SkuFilterComponent } from './components/sku-filter/sku-filter.component
     ReactiveFormsModule,
     SkuRouting,
     StoreModule.forFeature('sku', reducers),
-    EffectsModule.forFeature([SkuEffects/*, CustomerDetailEffects, CustomerTypeEffects*/]),
+    EffectsModule.forFeature([SkuEffects, SkuDetailEffects]),
     MaterialModule,
     SharedModule
   ],
   declarations: [
     SkuOverviewComponent,
     SkuListComponent,
-    SkuFilterComponent
-    /*
-    CustomerFormComponent,
-    CustomerDetailComponent,
-    CustomerGeneralInfoFormCardComponent,
-    CustomerContactFormCardComponent*/
+    SkuFilterComponent,
+    SkuGeneralInfoFormCardComponent,
+    SkuFormComponent,
+    SkuDetailComponent
   ],
   providers: [
     SkuService,
-    /*CustomerDetailCreateGuard,
-    CustomerDetailEditGuard,*/
+    SkuDetailCreateGuard,
+    SkuDetailEditGuard,
     SkuOverviewGuard
   ]
 })

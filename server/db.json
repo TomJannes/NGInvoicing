@@ -12,7 +12,7 @@
         "street": "streetken",
         "number": "numberken",
         "bus": "",
-        "zip": "zipken",
+        "zip": "2610",
         "place": "plaatsken"
       },
       "contacts": [
@@ -304,9 +304,13 @@
     }
   ],
   "sku": [
-    { 
+    {
       "id": 1,
       "name": "1 hour consultancy - 100%"
+    },
+    {
+      "id": 2,
+      "name": "Test sku 2"
     }
   ],
   "profile": {
