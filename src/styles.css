@@ -16,3 +16,7 @@ mat-card {
 .mat-card-header-text {
     width: 100%;
 }
+
+mat-form-field {
+    width: 19%;
+}

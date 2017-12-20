@@ -306,11 +306,15 @@
   "sku": [
     {
       "id": 1,
-      "name": "1 hour consultancy - 100%"
+      "name": "1 hour consultancy - 100%",
+      "vat": 21.5,
+      "price": 71.25
     },
     {
       "id": 2,
-      "name": "Test sku 2"
+      "name": "Test sku 2",
+      "vat": 6.5,
+      "price": 71
     }
   ],
   "profile": {

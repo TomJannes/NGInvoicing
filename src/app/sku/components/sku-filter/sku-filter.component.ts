@@ -22,8 +22,9 @@ export class SkuFilterComponent implements OnInit {
 
   ngOnInit() {
     this.searchForm = this.formBuilder.group({
-      id: '',
-      name: ''
+      name: '',
+      price: '',
+      vat: ''
     });
 
     this.searchParams

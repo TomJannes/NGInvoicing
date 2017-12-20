@@ -25,7 +25,9 @@ export class SkuFormComponent implements OnInit {
     this.successMessage = fromSku.SAVE_SUCCESS;
 
     this.form = fb.group({
-      name: ['', Validators.required]
+      name: ['', Validators.required],
+      vat: ['', Validators.required],
+      price: ['', Validators.required]
     });
   }
 

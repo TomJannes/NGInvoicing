@@ -2,10 +2,13 @@
   <div>
     <form [formGroup]="searchForm" *ngIf="showFilter">
       <mat-form-field>
-        <input matInput placeholder="Id" formControlName="id" value="{{parameters.id}}" type="number">
+        <input matInput placeholder="Name" formControlName="name" value="{{parameters.name}}" type="text">
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Name" formControlName="name" value="{{parameters.name}}" type="text">
+        <input matInput placeholder="Price excl VAT" formControlName="price" value="{{parameters.price}}" type="number">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="VAT %" formControlName="vat" value="{{parameters.vat}}" type="number">
       </mat-form-field>
       <button mat-icon-button type="button" (click)="onSearch()">
         <mat-icon>search</mat-icon>

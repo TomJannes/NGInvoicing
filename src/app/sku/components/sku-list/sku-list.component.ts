@@ -33,7 +33,7 @@ export class SkuListComponent implements OnInit {
   private searchParams = new Subject<SkuSearchParams>();
 
   constructor() {
-    this.displayedColumns = ['id', 'name', 'actions'];
+    this.displayedColumns = ['name', 'price', 'vat', 'actions'];
   }
 
   ngOnInit(): void {
