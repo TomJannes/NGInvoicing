@@ -1,0 +1,19 @@
+.customergrid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start
+}
+
+.customergrid > .select {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 30%;
+  }
+
+.customergrid > .info {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 50%;
+  }

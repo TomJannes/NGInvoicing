@@ -1,7 +1,6 @@
 import { createFeatureSelector, createSelector, StoreModule, ActionReducerMap } from '@ngrx/store';
 import * as fromInvoice from './invoice';
 import * as fromLayout from './layout';
-import * as fromCustomer from '../../customers/reducers';
 import * as fromDetail from './invoice-detail';
 import * as fromRoot from '../../reducers';
 
@@ -9,7 +8,6 @@ import * as fromRoot from '../../reducers';
 export interface InvoiceState {
   'overview': fromInvoice.State;
   'layout': fromLayout.State;
-  'customers': fromCustomer.State;
   'detail': fromDetail.State;
 }
 
@@ -20,7 +18,6 @@ export interface State extends fromRoot.State {
 export const reducers: ActionReducerMap<any> = {
   overview: fromInvoice.reducer,
   layout: fromLayout.reducer,
-  customers: fromCustomer.reducers.reducer, // this seems weird
   detail: fromDetail.reducer
 };
 

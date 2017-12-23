@@ -337,10 +337,25 @@
           "zip": "2610",
           "place": "plaatsken"
         },
-        "contacts": []
+        "contacts": [
+          {
+            "firstName": "John",
+            "lastName": "Doe",
+            "email": "john.doe@lalaland.be",
+            "phone": "12345678",
+            "info": ""
+          },
+          {
+            "firstName": "Joe",
+            "lastName": "Fucko",
+            "email": "joe.fucko@lalaland.be",
+            "phone": "12345678",
+            "info": ""
+          }
+        ]
       },
       "lines": [
-        {  
+        {
           "sku": {
             "id": 1,
             "name": "1 hour consultancy - 100%",

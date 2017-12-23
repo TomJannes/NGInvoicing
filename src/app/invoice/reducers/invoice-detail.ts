@@ -12,7 +12,7 @@ const initialState: State = {
     isLoading: false,
     isLoadSuccess: false,
     selectedId: 0,
-    invoice: { id: 0 }
+    invoice: { id: 0, lines: [] },
 };
 
 export function reducer(state = initialState, action: invoice.Actions): State {

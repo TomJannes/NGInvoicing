@@ -1,14 +1,42 @@
 <ng-container [formGroup]="controlContainer.control">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Customer Information</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-form-field>
-        <mat-select placeholder="Customer" formControlName="customer" [compareWith]="compare">
-          <mat-option *ngFor="let customer of customers" [value]="customer">{{ customer.name }}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </mat-card-content>
-  </mat-card>
+  <div class="customergrid">
+    <mat-card class="select">
+      <mat-card-header>
+        <mat-card-title>Select Customer</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field style="width:100%">
+          <input matInput placeholder="Customer" [matAutocomplete]="auto" formControlName="customer">
+          <mat-autocomplete #auto="matAutocomplete" [displayWith]="customerToNameConverter">
+            <mat-option *ngFor="let customer of filteredCustomers | async" [value]="customer">{{customer.name}}</mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="info">
+      <mat-card-header>
+        <mat-card-title>Customer Information</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field>
+          <input matInput placeholder="Kbo" [value]="controlContainer.control.controls['customer'].value?.kbo" readonly>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Street" [value]="controlContainer.control.controls['customer'].value?.address?.street" readonly>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Nr" [value]="controlContainer.control.controls['customer'].value?.address?.number" readonly>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Bus" [value]="controlContainer.control.controls['customer'].value?.address?.bus" readonly>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Zip" [value]="controlContainer.control.controls['customer'].value?.address?.zip" readonly>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Place" [value]="controlContainer.control.controls['customer'].value?.address?.place" readonly>
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </ng-container>

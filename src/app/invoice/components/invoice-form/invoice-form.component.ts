@@ -5,6 +5,7 @@ import * as fromInvoice from '../../actions/invoice-detail';
 import { EventEmitter } from '@angular/core';
 import { FormHelper } from '../../../shared/form-helper';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { Customer } from '../../../customers/model/customer';
 // import { InvoiceContactFormCardComponent } from '../invoice-contact-form-card/invoice-contact-form-card.component';
 
 @Component({
@@ -16,6 +17,7 @@ import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 export class InvoiceFormComponent implements OnInit {
   form: FormGroup;
   @Input() invoice: Invoice;
+  @Input() customers: Customer[];
   @Output() save: EventEmitter<any> = new EventEmitter<any>();
   @Output() cancel: EventEmitter<any> = new EventEmitter<any>();
   actionType: any;
