@@ -22,6 +22,7 @@ import { InvoiceDetailEditGuard } from './containers/invoice-detail/invoice-deta
 import { InvoiceDetailEffects } from './effects/invoice-detail';
 import { InvoiceGeneralInfoFormCardComponent } from './components/invoice-general-info-form-card/invoice-general-info-form-card.component';
 import { CustomerModule } from '../customers/customer.module';
+import { InvoiceLinesFormCardComponent } from './components/invoice-lines-form-card/invoice-lines-form-card.component';
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import { CustomerModule } from '../customers/customer.module';
     // InvoiceGeneralInfoFormCardComponent,
     InvoiceFormComponent,
     InvoiceDetailComponent,
-    InvoiceGeneralInfoFormCardComponent
+    InvoiceGeneralInfoFormCardComponent,
+    InvoiceLinesFormCardComponent
   ],
   providers: [
     InvoiceService,

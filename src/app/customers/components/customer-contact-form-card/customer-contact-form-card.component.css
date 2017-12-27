@@ -12,24 +12,6 @@
     flex-basis: 50%;
   }
 
-.header-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.header-container > .title {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 90%;
-  }
-.header-container > .buttons {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 10%;
-    align-items: flex-end;
-    text-align: right;
-  }
-
 mat-form-field {
     width: 45%;
 }

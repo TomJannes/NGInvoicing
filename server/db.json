@@ -313,7 +313,7 @@
     {
       "id": 2,
       "name": "Test sku 2",
-      "vat": 6.5,
+      "vat": 7.5,
       "price": 71
     }
   ],
@@ -354,6 +354,9 @@
           }
         ]
       },
+      "total": 1500,
+      "totalInc": 1700,
+      "totalVat": 200,
       "lines": [
         {
           "sku": {
@@ -362,7 +365,20 @@
             "vat": 21.5,
             "price": 71.25
           },
-          "amount": 8
+          "amount": 8,
+          "total": 1000,
+          "totalInc": 4578
+        },
+        {
+          "sku": {
+            "id": 1,
+            "name": "1 hour consultancy - 100%",
+            "vat": 21.5,
+            "price": 71.25
+          },
+          "amount": 10,
+          "total": 1000,
+          "totalInc": 4578
         }
       ]
     }

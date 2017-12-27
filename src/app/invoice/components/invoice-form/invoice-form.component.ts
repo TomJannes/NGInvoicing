@@ -30,45 +30,42 @@ export class InvoiceFormComponent implements OnInit {
     this.form = fb.group({
       customer: null,
       number: null,
-      // name: ['', Validators.required],
-      // kbo: '',
-      // address: fb.group({
-      //   street: ['', Validators.required],
-      //   number: ['', Validators.required],
-      //   bus: '',
-      //   zip: ['', Validators.required],
-      //   place: ['', Validators.required]
-      // }),
-      // contacts: fb.array([])
+      total: '',
+      totalInc: '',
+      totalVat: '',
+      lines: fb.array([])
     });
   }
 
   ngOnInit() {
-    // const control = <FormArray>this.form.controls.contacts;
-    // this.invoice.contacts.forEach(x => {
-    //   control.push(this.createContact());
-    // });
+    const control = <FormArray>this.form.controls.lines;
+    this.invoice.lines.forEach(x => {
+      control.push(this.createLine());
+    });
   }
 
-  // createContact(): FormGroup {
-  //   return this.fb.group({
-  //     firstName: ['', Validators.required],
-  //     lastName: ['', Validators.required],
-  //     email: '',
-  //     phone: '',
-  //     info: ''
-  //   });
-  // }
+  createLine(): FormGroup {
+    return this.fb.group({
+      sku: this.fb.group({
+        name: '',
+        vat: '',
+        price: ''
+      }),
+      amount: '',
+      total: '',
+      totalInc: ''
+    });
+  }
 
-  // onAdd() {
-  //   const control = <FormArray>this.form.controls.contacts;
-  //   control.push(this.createContact());
-  // }
+  onAdd() {
+    const control = <FormArray>this.form.controls.lines;
+    control.push(this.createLine());
+  }
 
-  // onRemove(index: number) {
-  //   const control = <FormArray>this.form.controls.contacts;
-  //   control.removeAt(index);
-  // }
+  onRemove(index: number) {
+    const control = <FormArray>this.form.controls.lines;
+    control.removeAt(index);
+  }
 
   onSubmit() {
     FormHelper.validateAllFormFields(this.form);

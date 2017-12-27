@@ -1,0 +1,43 @@
+.invoicelines {
+    width: 100%;
+}
+
+.invoicelines > tbody > tr > td {
+    border-bottom: 1px solid white;
+    padding-right: 10px;
+}
+
+.amount {
+    width: 5%;
+    text-align: right;
+}
+
+.name {
+    width: 40%;
+}
+
+.price {
+    width: 10%;
+    text-align: right;
+}
+
+.vat {
+    width: 10%;
+    text-align: right;
+}
+
+.total {
+    width: 15%;
+    text-align: right;
+}
+
+.totalInc {
+    width: 20%;
+    text-align: right;
+}
+
+.invoicetotal {
+    border-bottom: 1px solid white;
+    padding-right: 10px;
+    text-align: right;
+}

@@ -1,0 +1,57 @@
+<ng-container [formGroup]="controlContainer.control">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <div class="header-container">
+          <div class="title">Lines</div>
+          <div class="buttons">
+            <button mat-icon-button type="button" (click)="onAddNew()" [disabled]="controlContainer.control.invalid">
+              <mat-icon>add_circle_outline</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="invoicelinegrid">
+      <table class="invoicelines">
+        <thead>
+          <tr>
+            <td>Amount</td>
+            <td>Sku</td>
+            <td>Price excl VAT</td>
+            <td>VAT %</td>
+            <td>Total excl VAT</td>
+            <td>Total incl VAT</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr formArrayName="lines" *ngFor="let line of controlContainer.control.get('lines')['controls']; let i = index;let last = last">
+            <td class="amount">{{line.value.amount}}</td>
+            <td class="name">{{line.value.sku.name}}</td>
+            <td class="price">{{line.value.sku.price}}</td>
+            <td class="vat">{{line.value.sku.vat}} %</td>
+            <td class="total">{{line.value.total}}</td>
+            <td class="totalInc">{{line.value.totalInc}}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4"></td>
+            <td class="invoicetotal">Total excl VAT</td>
+            <td class="invoicetotal">{{controlContainer.control.get('total').value}}</td>
+          </tr>
+          <tr>
+            <td colspan="4"></td>
+            <td class="invoicetotal">Total VAT</td>
+            <td class="invoicetotal">{{controlContainer.control.get('totalVat').value}}</td>
+          </tr>
+          <tr>
+            <td colspan="4"></td>
+            <td class="invoicetotal">Total incl VAT</td>
+            <td class="invoicetotal">{{controlContainer.control.get('totalInc').value}}</td>
+          </tr>
+        </tfoot>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</ng-container>

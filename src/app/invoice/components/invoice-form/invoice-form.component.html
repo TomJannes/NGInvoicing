@@ -5,6 +5,7 @@
       <app-address-form-card formGroupName="address"></app-address-form-card>
       <app-invoice-contact-form-card (add)="onAdd()" (remove)="onRemove($event)"></app-invoice-contact-form-card> -->
       <app-invoice-general-info-form-card [customers]="customers"></app-invoice-general-info-form-card>
+      <app-invoice-lines-form-card (add)="onAdd()" (remove)="onRemove($event)"></app-invoice-lines-form-card>
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button type="submit" [disabled]="form.invalid">Save</button>

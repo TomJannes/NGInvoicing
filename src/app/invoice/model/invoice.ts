@@ -4,6 +4,8 @@ import { Sku } from '../../sku/model/sku';
 export interface InvoiceLine {
     sku?: Sku;
     amount?: number;
+    total?: number;
+    totalInc?: number;
 }
 
 export interface Invoice {
