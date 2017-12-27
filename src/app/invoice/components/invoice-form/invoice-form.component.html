@@ -1,9 +1,6 @@
 <form [formGroup]="form" appConnectForm [changeAction]="actionType" [data]="invoice" [successMessage]="successMessage" (submit)="onSubmit()">
   <mat-card>
     <mat-card-content>
-      <!-- <app-invoice-general-info-form-card [invoiceTypes]="invoiceTypes"></app-invoice-general-info-form-card>
-      <app-address-form-card formGroupName="address"></app-address-form-card>
-      <app-invoice-contact-form-card (add)="onAdd()" (remove)="onRemove($event)"></app-invoice-contact-form-card> -->
       <app-invoice-general-info-form-card [customers]="customers"></app-invoice-general-info-form-card>
       <app-invoice-lines-form-card (add)="onAdd()" (remove)="onRemove($event)"></app-invoice-lines-form-card>
     </mat-card-content>

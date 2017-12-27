@@ -23,6 +23,8 @@ import { InvoiceDetailEffects } from './effects/invoice-detail';
 import { InvoiceGeneralInfoFormCardComponent } from './components/invoice-general-info-form-card/invoice-general-info-form-card.component';
 import { CustomerModule } from '../customers/customer.module';
 import { InvoiceLinesFormCardComponent } from './components/invoice-lines-form-card/invoice-lines-form-card.component';
+import { AddInvoiceLineDialogComponent } from './components/add-invoice-line-dialog/add-invoice-line-dialog.component';
+import { SkuModule } from '../sku/sku.module';
 
 @NgModule({
   imports: [
@@ -32,6 +34,7 @@ import { InvoiceLinesFormCardComponent } from './components/invoice-lines-form-c
     ReactiveFormsModule,
     InvoiceRouting,
     CustomerModule,
+    SkuModule,
     StoreModule.forFeature('invoice', reducers),
     EffectsModule.forFeature([InvoiceEffects, InvoiceDetailEffects]),
     MaterialModule,
@@ -41,11 +44,14 @@ import { InvoiceLinesFormCardComponent } from './components/invoice-lines-form-c
     InvoiceOverviewComponent,
     InvoiceListComponent,
     InvoiceFilterComponent,
-    // InvoiceGeneralInfoFormCardComponent,
     InvoiceFormComponent,
     InvoiceDetailComponent,
     InvoiceGeneralInfoFormCardComponent,
-    InvoiceLinesFormCardComponent
+    InvoiceLinesFormCardComponent,
+    AddInvoiceLineDialogComponent
+  ],
+  entryComponents: [
+    AddInvoiceLineDialogComponent
   ],
   providers: [
     InvoiceService,

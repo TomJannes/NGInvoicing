@@ -366,6 +366,8 @@
             "price": 71.25
           },
           "amount": 8,
+          "vat": 21.5,
+          "price": 71.25,
           "total": 1000,
           "totalInc": 4578
         },
@@ -377,6 +379,8 @@
             "price": 71.25
           },
           "amount": 10,
+          "vat": 21.5,
+          "price": 71.25,
           "total": 1000,
           "totalInc": 4578
         }
