@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Input, Output } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, Output, OnChanges, SimpleChanges } from '@angular/core';
 import { Invoice } from '../../model/invoice';
 import { Observable } from 'rxjs/Observable';
 import * as fromInvoice from '../../actions/invoice-detail';
@@ -16,20 +16,16 @@ import { Sku } from '../../../sku/model/sku';
   styleUrls: ['./invoice-form.component.css'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class InvoiceFormComponent implements OnInit {
+export class InvoiceFormComponent implements OnInit, OnChanges {
   form: FormGroup;
   @Input() invoice: Invoice;
   @Input() customers: Customer[];
   @Input() skus: Sku[];
   @Output() save: EventEmitter<any> = new EventEmitter<any>();
   @Output() cancel: EventEmitter<any> = new EventEmitter<any>();
-  actionType: any;
-  successMessage: string;
+  @Output() recalculateTotals: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private fb: FormBuilder, public dialog: MatDialog) {
-    this.actionType = fromInvoice.FormUpdate;
-    this.successMessage = fromInvoice.SAVE_SUCCESS;
-
     this.form = fb.group({
       customer: null,
       number: null,
@@ -40,11 +36,17 @@ export class InvoiceFormComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes.invoice.previousValue !== undefined) {
+      this.form.patchValue(changes.invoice.currentValue);
+    }
+  }
+  ngOnInit(): void {
     const control = <FormArray>this.form.controls.lines;
     this.invoice.lines.forEach(x => {
       control.push(this.createLine());
     });
+    this.form.patchValue(this.invoice);
   }
 
   createLine(): FormGroup {
@@ -73,35 +75,27 @@ export class InvoiceFormComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if(!result.save) {
-        const control = <FormArray>this.form.controls.lines;
-        control.removeAt(result.controlIndex);
+        this.remove(result.controlIndex);
       } else {
-        this.calculateTotals();
+        this.recalculateTotals.emit({ data: this.form.value });
       }
     });
   }
 
-  calculateTotals() {
-    let total: number = 0;
-    let totalInc: number = 0;
+  remove(index: number) {
     const control = <FormArray>this.form.controls.lines;
-    for(let ctrl of control.controls) {
-      total += parseFloat(ctrl.value.total);
-      totalInc += parseFloat(ctrl.value.totalInc);
-    }
-    this.form.controls['total'].patchValue(total.toFixed(2));
-    this.form.controls['totalInc'].patchValue(totalInc.toFixed(2));
+    control.removeAt(index);
   }
 
   onRemove(index: number) {
-    const control = <FormArray>this.form.controls.lines;
-    control.removeAt(index);
+    this.remove(index);
+    this.recalculateTotals.emit({ data: this.form.value });
   }
 
   onSubmit() {
     FormHelper.validateAllFormFields(this.form);
     if (this.form.valid) {
-      this.save.emit(null);
+      this.save.emit({ data: Object.assign({}, this.invoice, this.form.value) });
     }
   }
 

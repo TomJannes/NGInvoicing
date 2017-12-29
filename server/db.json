@@ -354,9 +354,9 @@
           }
         ]
       },
-      "total": 1500,
-      "totalInc": 1700,
-      "totalVat": 200,
+      "total": "2325.00",
+      "totalInc": "2824.88",
+      "totalVat": "499.88",
       "lines": [
         {
           "sku": {
@@ -365,11 +365,11 @@
             "vat": 21.5,
             "price": 71.25
           },
-          "amount": 8,
+          "amount": 20,
           "vat": 21.5,
           "price": 71.25,
-          "total": 1000,
-          "totalInc": 4578
+          "total": "1425.00",
+          "totalInc": "1731.38"
         },
         {
           "sku": {
@@ -380,11 +380,66 @@
           },
           "amount": 10,
           "vat": 21.5,
-          "price": 71.25,
-          "total": 1000,
-          "totalInc": 4578
+          "price": 90,
+          "total": "900.00",
+          "totalInc": "1093.50"
         }
       ]
+    },
+    {
+      "id": 2,
+      "lines": [
+        {
+          "sku": {
+            "id": 1,
+            "name": "1 hour consultancy - 100%",
+            "vat": 21.5,
+            "price": 71.25
+          },
+          "amount": 50,
+          "vat": 21.5,
+          "price": 71.25,
+          "total": "3562.50",
+          "totalInc": "4328.44"
+        }
+      ],
+      "customer": {
+        "id": 1,
+        "name": "Test BVBA",
+        "kbo": "0123456789",
+        "type": {
+          "id": 1,
+          "name": "Company"
+        },
+        "address": {
+          "street": "streetken",
+          "number": "numberken",
+          "bus": "",
+          "zip": "2610",
+          "place": "plaatsken"
+        },
+        "contacts": [
+          {
+            "firstName": "John",
+            "lastName": "Doe",
+            "email": "john.doe@lalaland.be",
+            "phone": "12345678",
+            "info": ""
+          },
+          {
+            "firstName": "Joe",
+            "lastName": "Fucko",
+            "email": "joe.fucko@lalaland.be",
+            "phone": "12345678",
+            "info": ""
+          }
+        ]
+      },
+      "number": 201700002,
+      "creationDate": "01/01/2017",
+      "total": "3562.50",
+      "totalInc": "4328.44",
+      "totalVat": "765.94"
     }
   ],
   "profile": {

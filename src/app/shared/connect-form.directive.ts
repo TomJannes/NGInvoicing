@@ -7,6 +7,7 @@ import { Actions } from '@ngrx/effects';
 import { FormArray, AbstractControl } from '@angular/forms/src/model';
 import 'rxjs/add/operator/debounceTime';
 
+//TODO: i think this can be removed, better to trigger this manually, gives more control
 @Directive({
     selector: '[appConnectForm]'
 })

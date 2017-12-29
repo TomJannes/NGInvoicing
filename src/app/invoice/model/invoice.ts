@@ -8,6 +8,7 @@ export interface InvoiceLine {
     amount?: number;
     total?: number;
     totalInc?: number;
+    totalVat?: number;
 }
 
 export interface Invoice {

@@ -12,7 +12,6 @@ export class InvoiceLinesFormCardComponent implements OnInit {
   @Output() add: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(public controlContainer: ControlContainer) { 
-    
   }
 
   ngOnInit() {

@@ -6,7 +6,7 @@ export const RESET = '[Invoice Detail] Reset';
 export const GET_SUCCESS = '[Invoice Detail] Search Success';
 export const GET_FAILED = '[Invoice Detail] Search Failed';
 
-export const FORM_UPDATE = '[Invoice Detail] Form Update';
+export const RECALCULATE_TOTALS = '[Invoice Detail] Recalculate Totals';
 export const SAVE = '[Invoice Detail] Save';
 export const SAVE_SUCCESS = '[Invoice Detail] Save Success';
 export const SAVE_FAILED = '[Invoice Detail] Save Failed';
@@ -33,13 +33,13 @@ export class GetFailed implements Action {
 }
 
 export class FormUpdate implements Action {
-    readonly type = FORM_UPDATE;
+    readonly type = RECALCULATE_TOTALS;
     constructor(public payload: any) {}
 }
 
 export class Save implements Action {
     readonly type = SAVE;
-    constructor() {}
+    constructor(public payload: any) {}
 }
 
 export class SaveSuccess implements Action {

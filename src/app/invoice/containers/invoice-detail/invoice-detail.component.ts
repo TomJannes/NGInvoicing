@@ -22,13 +22,19 @@ export class InvoiceDetailComponent {
   skus$: Observable<Sku[]>;
 
   constructor(private store: Store<fromInvoice.State>) {
-    this.selectedInvoice$ = this.store.select(fromInvoice.getSelectedInvoice).take(1);
+    this.selectedInvoice$ = this.store.select(fromInvoice.getSelectedInvoice).distinctUntilChanged((x: Invoice, y: Invoice) => {
+      return JSON.stringify(x) === JSON.stringify(y) 
+    });
     this.customers$ = this.store.select(fromCustomer.getCustomers).map((val) => val.customers).take(1);
     this.skus$ = this.store.select(fromSku.getSkus).map((val) => val.skus).take(1);
   }
 
-  save() {
-    this.store.dispatch(new InvoiceActions.Save());
+  recalculateTotals(event) {
+    this.store.dispatch(new InvoiceActions.FormUpdate(event))
+  }
+
+  save(itemToSave) {
+    this.store.dispatch(new InvoiceActions.Save(itemToSave));
   }
 
   cancel() {

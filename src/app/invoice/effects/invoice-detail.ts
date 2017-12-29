@@ -38,8 +38,7 @@ export class InvoiceDetailEffects {
 
     @Effect()
     invoiceDetailSave$ = this.actions$.ofType<Save>(Act.SAVE)
-        .withLatestFrom(this.store)
-        .map(([action, state]) => state.invoice.detail.invoice)
+        .map((x) => x.payload.data)
         .switchMap(invoice => {
             return this.invoiceService.saveInvoice(invoice)
                 .switchMap(data => {
