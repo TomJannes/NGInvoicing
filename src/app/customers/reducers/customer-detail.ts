@@ -4,15 +4,15 @@ import { Customer } from '../model/customer';
 export interface State {
     isLoading: boolean;
     isLoadSuccess: boolean;
-    selectedId: number;
+    selectedId: string;
     customer: Customer;
 }
 
 const initialState: State = {
     isLoading: false,
     isLoadSuccess: false,
-    selectedId: 0,
-    customer: { id: 0, contacts: [] }
+    selectedId: null,
+    customer: { _id: null, contacts: [] }
 };
 
 export function reducer(state = initialState, action: customer.Actions): State {
@@ -45,7 +45,7 @@ export function reducer(state = initialState, action: customer.Actions): State {
                 ...state,
                 isLoading: false,
                 isLoadSuccess: false,
-                selectedId: 0,
+                selectedId: null,
                 customer: initialState.customer,
             };
         default:

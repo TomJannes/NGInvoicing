@@ -14,7 +14,7 @@ export const SAVE_FAILED = '[Invoice Detail] Save Failed';
 
 export class Get implements Action {
     readonly type = GET;
-    constructor(public id: number) {}
+    constructor(public id: string) {}
 }
 
 export class Reset implements Action {

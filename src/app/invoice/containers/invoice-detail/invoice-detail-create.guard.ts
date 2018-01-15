@@ -19,7 +19,7 @@ export class InvoiceDetailCreateGuard implements CanActivate {
         this.store.dispatch(new CustomerActions.UpdateSearchParameters(null));
         this.store.dispatch(new SkuActions.UpdateSearchParameters(null));
         return Observable.zip(
-                    this.store.select(fromInvoice.getSelectedInvoice).filter((data) => data.id === 0).take(1),
+                    this.store.select(fromInvoice.getSelectedInvoice).filter((data) => data._id === null).take(1),
                     this.store.select(fromCustomers.getCustomers).filter((data) => data.customers.length > 0).take(1),
                     this.store.select(fromSku.getSkus).filter((data) => data.skus.length > 0).take(1),
                 ).filter((data) => {

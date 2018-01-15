@@ -18,7 +18,7 @@ export class ProfileService {
     }
 
     saveProfile(profile: Profile): Observable<Profile> {
-        return this.http$.put('/api/profile', profile, { observe: 'response' })
+        return this.http$.put('/api/profile/' + profile._id, profile, { observe: 'response' })
             .map((res: HttpResponse<Profile>) => {
                 return res.body;
             });

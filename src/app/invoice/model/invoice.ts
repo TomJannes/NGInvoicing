@@ -12,7 +12,7 @@ export interface InvoiceLine {
 }
 
 export interface Invoice {
-    id: number;
+    _id: string;
     number?: number;
     creationDate?: Date;
     customer?: Customer;

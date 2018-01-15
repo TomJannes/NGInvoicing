@@ -16,7 +16,7 @@ export class CustomerDetailEditGuard implements CanActivate {
         this.store.dispatch(new CustomerTypeActions.Search());
         this.store.dispatch(new CustomerDetailActions.Get(route.params.id));
         return Observable.zip(
-                    this.store.select(fromCustomer.getSelectedCustomer).filter((data) => data.id === Number(route.params.id)).take(1),
+                    this.store.select(fromCustomer.getSelectedCustomer).filter((data) => data._id === route.params.id).take(1),
                     this.store.select(fromCustomer.getCustomerTypes).filter((data) => data.customerTypes.length > 0).take(1)
                 ).filter((data) => {
                     return data[0] !== null && data[1] !== null;

@@ -4,15 +4,15 @@ import { Invoice } from '../model/invoice';
 export interface State {
     isLoading: boolean;
     isLoadSuccess: boolean;
-    selectedId: number;
+    selectedId: string;
     invoice: Invoice;
 }
 
 const initialState: State = {
     isLoading: false,
     isLoadSuccess: false,
-    selectedId: 0,
-    invoice: { id: 0, lines: [] },
+    selectedId: null,
+    invoice: { _id: null, lines: [] },
 };
 
 function round(number) {
@@ -67,7 +67,7 @@ export function reducer(state = initialState, action: invoice.Actions): State {
                 ...state,
                 isLoading: false,
                 isLoadSuccess: false,
-                selectedId: 0,
+                selectedId: null,
                 invoice: initialState.invoice,
             };
         default:

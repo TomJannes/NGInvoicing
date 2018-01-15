@@ -1,7 +1,7 @@
 import { Address } from '../../shared/models/address';
 
 export interface Profile {
-    id: number;
+    _id: string;
     name?: string;
     kbo?: string;
     address?: Address;

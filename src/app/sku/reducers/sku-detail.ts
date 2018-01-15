@@ -4,15 +4,15 @@ import { Sku } from '../model/sku';
 export interface State {
     isLoading: boolean;
     isLoadSuccess: boolean;
-    selectedId: number;
+    selectedId: string;
     sku: Sku;
 }
 
 const initialState: State = {
     isLoading: false,
     isLoadSuccess: false,
-    selectedId: 0,
-    sku: { id: 0 }
+    selectedId: null,
+    sku: { _id: null }
 };
 
 export function reducer(state = initialState, action: sku.Actions): State {
@@ -45,7 +45,7 @@ export function reducer(state = initialState, action: sku.Actions): State {
                 ...state,
                 isLoading: false,
                 isLoadSuccess: false,
-                selectedId: 0,
+                selectedId: null,
                 sku: initialState.sku,
             };
         default:

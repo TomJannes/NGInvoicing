@@ -14,7 +14,7 @@ const initialState: State = {
     isLoading: false,
     isLoadSuccess: false,
     customerResult: { customers: [], paging: { totalItemCount: 0 } },
-    parameters: { pagination: { itemsPerPage: 10, currentPage: 1 }, sorting: { field: 'id', order: 'asc' } }
+    parameters: { pagination: { itemsPerPage: 10, currentPage: 1 }, sorting: { field: 'id', order: 'asc' } } //todo: change default sorting
 };
 
 export function reducer(state = initialState, action: customer.Actions): State {

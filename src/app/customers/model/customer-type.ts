@@ -1,4 +1,4 @@
 export interface CustomerType {
-    id: number;
+    _id: string;
     name: string;
 }

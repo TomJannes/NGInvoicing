@@ -21,7 +21,7 @@ export class SkuService {
             });
     }
 
-    getSku(id: number): Observable<Sku> {
+    getSku(id: string): Observable<Sku> {
         return this.http$.get('/api/sku/' + id, { observe: 'response' })
             .map((res: HttpResponse<Sku>) => {
                 return res.body;
@@ -29,8 +29,8 @@ export class SkuService {
     }
 
     saveSku(sku: Sku): Observable<Sku> {
-        if (sku.id !== 0) {
-            return this.http$.put('/api/sku/' + sku.id, sku, { observe: 'response' })
+        if (sku._id !== null) {
+            return this.http$.put('/api/sku/' + sku._id, sku, { observe: 'response' })
                 .map((res: HttpResponse<Sku>) => {
                     return res.body;
                 });

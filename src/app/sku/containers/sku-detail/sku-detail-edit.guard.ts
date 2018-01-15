@@ -14,7 +14,7 @@ export class SkuDetailEditGuard implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
         this.store.dispatch(new SkuDetailActions.Get(route.params.id));
         return Observable.zip(
-                    this.store.select(fromSku.getSelectedSku).filter((data) => data.id === Number(route.params.id)).take(1)
+                    this.store.select(fromSku.getSelectedSku).filter((data) => data._id === route.params.id).take(1)
                     // todo: add vat
                 ).filter((data) => {
                     return data[0] !== null && data[1] !== null;

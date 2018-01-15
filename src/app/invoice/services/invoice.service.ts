@@ -21,7 +21,7 @@ export class InvoiceService {
             });
     }
 
-    getInvoice(id: number): Observable<Invoice> {
+    getInvoice(id: string): Observable<Invoice> {
         return this.http$.get('/api/invoice/' + id, { observe: 'response' })
             .map((res: HttpResponse<Invoice>) => {
                 return res.body;
@@ -29,8 +29,8 @@ export class InvoiceService {
     }
 
     saveInvoice(invoice: Invoice): Observable<Invoice> {
-        if (invoice.id !== 0) {
-            return this.http$.put('/api/invoice/' + invoice.id, invoice, { observe: 'response' })
+        if (invoice._id !== null) {
+            return this.http$.put('/api/invoice/' + invoice._id, invoice, { observe: 'response' })
                 .map((res: HttpResponse<Invoice>) => {
                     return res.body;
                 });

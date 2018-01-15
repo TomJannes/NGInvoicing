@@ -17,7 +17,7 @@ export class InvoiceOverviewGuard implements CanActivate {
         this.store.dispatch(new InvoiceActions.Reset());
         return this.store.select(fromInvoice.getInvoices)
             .filter((data) => {
-                return data.invoices.length > 0;
+                return data.invoices !== null;
             })
             .take(1)
             .switchMap(() => of(true))

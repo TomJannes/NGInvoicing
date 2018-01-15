@@ -16,7 +16,7 @@ export class CustomerGeneralInfoFormCardComponent implements OnInit {
   }
 
   compare(val1, val2) {
-    return val1 && val2 && val1.id === val2.id;
+    return val1 && val2 && val1._id === val2._id;
   }
 
 }

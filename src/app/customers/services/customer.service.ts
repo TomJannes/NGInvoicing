@@ -21,7 +21,7 @@ export class CustomerService {
             });
     }
 
-    getCustomer(id: number): Observable<Customer> {
+    getCustomer(id: string): Observable<Customer> {
         return this.http$.get('/api/customer/' + id, { observe: 'response' })
             .map((res: HttpResponse<Customer>) => {
                 return res.body;
@@ -29,8 +29,8 @@ export class CustomerService {
     }
 
     saveCustomer(customer: Customer): Observable<Customer> {
-        if (customer.id !== 0) {
-            return this.http$.put('/api/customer/' + customer.id, customer, { observe: 'response' })
+        if (customer._id !== null) {
+            return this.http$.put('/api/customer/' + customer._id, customer, { observe: 'response' })
                 .map((res: HttpResponse<Customer>) => {
                     return res.body;
                 });

@@ -33,7 +33,7 @@ export class CustomerListComponent implements OnInit {
   private searchParams = new Subject<CustomerSearchParams>();
 
   constructor() {
-    this.displayedColumns = ['id', 'name', 'actions'];
+    this.displayedColumns = ['name', 'actions'];
   }
 
   ngOnInit(): void {
