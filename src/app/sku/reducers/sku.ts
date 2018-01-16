@@ -13,7 +13,7 @@ export interface State {
 const initialState: State = {
     isLoading: false,
     isLoadSuccess: false,
-    skuResult: { skus: [], paging: { totalItemCount: 0 } },
+    skuResult: { skus: null, paging: { totalItemCount: 0 } },
     parameters: { pagination: { itemsPerPage: 10, currentPage: 1 }, sorting: { field: 'id', order: 'asc' } }
 };
 

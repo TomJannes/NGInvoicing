@@ -17,7 +17,7 @@ export class SkuOverviewGuard implements CanActivate {
         this.store.dispatch(new SkuActions.Reset());
         return this.store.select(fromSku.getSkus)
             .filter((data) => {
-                return data.skus.length > 0;
+                return data.skus !== null;
             })
             .take(1)
             .switchMap(() => of(true))

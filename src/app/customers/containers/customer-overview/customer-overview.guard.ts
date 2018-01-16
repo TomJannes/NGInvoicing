@@ -17,7 +17,7 @@ export class CustomerOverviewGuard implements CanActivate {
         this.store.dispatch(new CustomerActions.Reset());
         return this.store.select(fromCustomer.getCustomers)
             .filter((data) => {
-                return data.customers.length > 0;
+                return data.customers !== null;
             })
             .take(1)
             .switchMap(() => of(true))

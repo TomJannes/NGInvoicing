@@ -21,6 +21,7 @@ function round(number) {
 
 export function reducer(state = initialState, action: invoice.Actions): State {
     switch (action.type) {
+        case invoice.SAVE_SUCCESS:
         case invoice.RESET:
             return {
                 ...initialState,
@@ -53,7 +54,6 @@ export function reducer(state = initialState, action: invoice.Actions): State {
                     totalVat: totalVat.toFixed(2)
                 } 
             };
-        case invoice.SAVE_SUCCESS:
         case invoice.GET_SUCCESS:
             return {
                 ...state,

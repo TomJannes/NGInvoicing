@@ -17,6 +17,7 @@ const initialState: State = {
 
 export function reducer(state = initialState, action: sku.Actions): State {
     switch (action.type) {
+        case sku.SAVE_SUCCESS:
         case sku.RESET:
             return {
                 ...initialState,
@@ -30,7 +31,6 @@ export function reducer(state = initialState, action: sku.Actions): State {
                 isLoading: true,
                 isLoadSuccess: false
             };
-        case sku.SAVE_SUCCESS:
         case sku.FORM_UPDATE:
         case sku.GET_SUCCESS:
             return {

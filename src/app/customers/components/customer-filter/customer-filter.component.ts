@@ -22,7 +22,6 @@ export class CustomerFilterComponent implements OnInit {
 
   ngOnInit() {
     this.searchForm = this.formBuilder.group({
-      id: '',
       name: ''
     });
 
