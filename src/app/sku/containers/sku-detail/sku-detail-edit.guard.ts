@@ -17,7 +17,7 @@ export class SkuDetailEditGuard implements CanActivate {
                     this.store.select(fromSku.getSelectedSku).filter((data) => data._id === route.params.id).take(1)
                     // todo: add vat
                 ).filter((data) => {
-                    return data[0] !== null && data[1] !== null;
+                    return data[0] !== null;
                 })
                 .switchMap(() => of(true))
                 .catch(() => of(false));
