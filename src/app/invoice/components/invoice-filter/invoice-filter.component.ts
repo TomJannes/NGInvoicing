@@ -22,8 +22,10 @@ export class InvoiceFilterComponent implements OnInit {
 
   ngOnInit() {
     this.searchForm = this.formBuilder.group({
-      id: '',
-      name: ''
+      number: '',
+      customer: this.formBuilder.group({
+        name: ''
+      })
     });
 
     this.searchParams
