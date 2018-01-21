@@ -22,6 +22,7 @@ import { CommonModule } from '@angular/common';
     AddressFormCardComponent
   ],
   providers: [
+    
   ]
 })
 export class SharedModule {

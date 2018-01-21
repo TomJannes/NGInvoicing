@@ -14,7 +14,7 @@ const initialState: State = {
     isLoading: false,
     isLoadSuccess: false,
     invoiceResult: { invoices: [], paging: { totalItemCount: 0 } },
-    parameters: { pagination: { itemsPerPage: 10, currentPage: 1 }, sorting: { field: 'id', order: 'asc' } }
+    parameters: { pagination: { itemsPerPage: 10, currentPage: 1 }, sorting: { field: 'number', order: 'desc' } }
 };
 
 export function reducer(state = initialState, action: invoice.Actions): State {

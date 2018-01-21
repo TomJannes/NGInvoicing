@@ -33,7 +33,7 @@ export class InvoiceListComponent implements OnInit {
   private searchParams = new Subject<InvoiceSearchParams>();
 
   constructor() {
-    this.displayedColumns = ['number', 'creationDate', 'customer', 'actions'];
+    this.displayedColumns = ['number', 'invoiceDate', 'customer', 'actions'];
   }
 
   ngOnInit(): void {

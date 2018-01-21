@@ -14,6 +14,7 @@ export interface InvoiceLine {
 export interface Invoice {
     _id: string;
     number?: number;
+    invoiceDate?: Date;
     creationDate?: Date;
     customer?: Customer;
     lines: InvoiceLine[];

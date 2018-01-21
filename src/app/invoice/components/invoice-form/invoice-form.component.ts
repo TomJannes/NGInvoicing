@@ -29,6 +29,7 @@ export class InvoiceFormComponent implements OnInit, OnChanges {
     this.form = fb.group({
       customer: null,
       number: null,
+      invoiceDate: new Date(),
       total: '',
       totalInc: '',
       totalVat: '',
