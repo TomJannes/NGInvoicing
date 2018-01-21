@@ -25,6 +25,8 @@ import { CustomerModule } from '../customers/customer.module';
 import { InvoiceLinesFormCardComponent } from './components/invoice-lines-form-card/invoice-lines-form-card.component';
 import { AddInvoiceLineDialogComponent } from './components/add-invoice-line-dialog/add-invoice-line-dialog.component';
 import { SkuModule } from '../sku/sku.module';
+import { InvoiceStateEffects } from './effects/invoice-state';
+import { InvoiceStateService } from './services/invoice-state.service';
 
 @NgModule({
   imports: [
@@ -36,7 +38,7 @@ import { SkuModule } from '../sku/sku.module';
     CustomerModule,
     SkuModule,
     StoreModule.forFeature('invoice', reducers),
-    EffectsModule.forFeature([InvoiceEffects, InvoiceDetailEffects]),
+    EffectsModule.forFeature([InvoiceEffects, InvoiceDetailEffects, InvoiceStateEffects]),
     MaterialModule,
     SharedModule
   ],
@@ -55,6 +57,7 @@ import { SkuModule } from '../sku/sku.module';
   ],
   providers: [
     InvoiceService,
+    InvoiceStateService,
     InvoiceDetailCreateGuard,
     InvoiceDetailEditGuard,
     InvoiceOverviewGuard

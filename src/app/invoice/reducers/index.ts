@@ -2,6 +2,7 @@ import { createFeatureSelector, createSelector, StoreModule, ActionReducerMap } 
 import * as fromInvoice from './invoice';
 import * as fromLayout from './layout';
 import * as fromDetail from './invoice-detail';
+import * as fromState from './invoice-state';
 import * as fromRoot from '../../reducers';
 
 
@@ -9,6 +10,7 @@ export interface InvoiceState {
   'overview': fromInvoice.State;
   'layout': fromLayout.State;
   'detail': fromDetail.State;
+  'invoiceStates': fromState.State;
 }
 
 export interface State extends fromRoot.State {
@@ -18,7 +20,8 @@ export interface State extends fromRoot.State {
 export const reducers: ActionReducerMap<any> = {
   overview: fromInvoice.reducer,
   layout: fromLayout.reducer,
-  detail: fromDetail.reducer
+  detail: fromDetail.reducer,
+  invoiceStates: fromState.reducer
 };
 
 export const getInvoiceState = createFeatureSelector<InvoiceState>('invoice');
@@ -31,9 +34,9 @@ export const getIsInvoiceLoadSuccess = createSelector(getInvoiceEntitiesState, f
 export const getLayoutState = createSelector(getInvoiceState, state => state.layout);
 export const getFilterLayout = createSelector(getLayoutState, fromLayout.getFilterLayout);
 
-// export const getTypeState = createSelector(getInvoiceState, state => state.types);
-// export const getInvoiceTypes = createSelector(getTypeState, fromTypes.getInvoiceTypes);
-
 export const getDetailState = createSelector(getInvoiceState, state => state.detail);
 export const getSelectedInvoice = createSelector(getDetailState, fromDetail.getInvoice);
 export const getIsInvoiceDetailLoadsuccess = createSelector(getDetailState, fromDetail.getIsLoadSuccess);
+
+export const getInvoiceStates = createSelector(getInvoiceState, state => state.invoiceStates);
+export const getAllInvoiceStates = createSelector(getInvoiceStates, fromState.getInvoiceStates);
