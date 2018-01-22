@@ -5,6 +5,7 @@ import { ControlContainer, FormControl } from '@angular/forms';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
+import { InvoiceState } from '../../model/invoice-state';
 
 @Component({
   selector: 'app-invoice-general-info-form-card',
@@ -13,6 +14,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class InvoiceGeneralInfoFormCardComponent implements OnInit {
   @Input() customers: Customer[];
+  @Input() invoiceStates: InvoiceState[];
 
   filteredCustomers: Observable<Customer[]>;
 
@@ -28,6 +30,10 @@ export class InvoiceGeneralInfoFormCardComponent implements OnInit {
   filter(val: string): Customer[] {
     return this.customers.filter(option =>
       option.name.toLowerCase().indexOf(val.toLowerCase()) === 0);
+  }
+
+  stateComparer(item1, item2) {
+    return item1 !== null && item2 !== null && item1._id === item2._id;
   }
 
   customerToNameConverter(customer: Customer): string {

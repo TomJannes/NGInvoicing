@@ -9,6 +9,7 @@ import * as InvoiceActions from '../../actions/invoice-detail';
 import * as RouterActions from '../../../shared/router/router.actions';
 import { Customer } from '../../../customers/model/customer';
 import { Sku } from '../../../sku/model/sku';
+import { InvoiceState } from '../../model/invoice-state';
 
 @Component({
   selector: 'app-invoice-detail',
@@ -19,6 +20,7 @@ import { Sku } from '../../../sku/model/sku';
 export class InvoiceDetailComponent {
   selectedInvoice$: Observable<Invoice>;
   customers$: Observable<Customer[]>;
+  invoiceStates$: Observable<InvoiceState[]>;
   skus$: Observable<Sku[]>;
 
   constructor(private store: Store<fromInvoice.State>) {
@@ -27,6 +29,7 @@ export class InvoiceDetailComponent {
     });
     this.customers$ = this.store.select(fromCustomer.getCustomers).map((val) => val.customers).take(1);
     this.skus$ = this.store.select(fromSku.getSkus).map((val) => val.skus).take(1);
+    this.invoiceStates$ = this.store.select(fromInvoice.getAllInvoiceStates).map((val) => val.invoiceStates).take(1);
   }
 
   recalculateTotals(event) {

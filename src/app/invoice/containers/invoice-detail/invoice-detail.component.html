@@ -1,6 +1,7 @@
 <app-invoice-form [invoice]="selectedInvoice$ | async" 
     [customers]="customers$ | async" 
     [skus]="skus$ | async" 
+    [invoiceStates]="invoiceStates$ | async"
     (recalculateTotals)="recalculateTotals($event)" 
     (save)="save($event)" 
     (cancel)="cancel()">

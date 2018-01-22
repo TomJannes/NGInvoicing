@@ -9,6 +9,7 @@ import { Customer } from '../../../customers/model/customer';
 import { MatDialog } from '@angular/material';
 import { AddInvoiceLineDialogComponent } from '../add-invoice-line-dialog/add-invoice-line-dialog.component';
 import { Sku } from '../../../sku/model/sku';
+import { InvoiceState } from '../../model/invoice-state';
 
 @Component({
   selector: 'app-invoice-form',
@@ -21,6 +22,7 @@ export class InvoiceFormComponent implements OnInit, OnChanges {
   @Input() invoice: Invoice;
   @Input() customers: Customer[];
   @Input() skus: Sku[];
+  @Input() invoiceStates: InvoiceState[];
   @Output() save: EventEmitter<any> = new EventEmitter<any>();
   @Output() cancel: EventEmitter<any> = new EventEmitter<any>();
   @Output() recalculateTotals: EventEmitter<any> = new EventEmitter<any>();
@@ -28,6 +30,7 @@ export class InvoiceFormComponent implements OnInit, OnChanges {
   constructor(private fb: FormBuilder, public dialog: MatDialog) {
     this.form = fb.group({
       customer: null,
+      state: null,
       number: null,
       invoiceDate: new Date(),
       total: '',
