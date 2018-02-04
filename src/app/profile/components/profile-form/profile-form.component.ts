@@ -28,6 +28,8 @@ export class ProfileFormComponent implements OnInit {
     this.form = fb.group({
       name: ['', Validators.required],
       kbo: ['', Validators.required],
+      phone: ['', Validators.required],
+      iban: ['', Validators.required],
       address: fb.group({
         street: ['', Validators.required],
         number: ['', Validators.required],
