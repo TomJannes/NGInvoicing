@@ -27,6 +27,7 @@ export class InvoiceListComponent implements OnInit {
   }
   @Input() parameters: InvoiceSearchParams;
   @Output() search: EventEmitter<InvoiceSearchParams> = new EventEmitter();
+  @Output() download: EventEmitter<string> = new EventEmitter();
 
   @ViewChild(MatSort) sort: MatSort;
 
@@ -55,5 +56,9 @@ export class InvoiceListComponent implements OnInit {
 
   onSort(sort: Sort): void {
     this.searchParams.next({ ...this.parameters, sorting: { field: sort.active, order: sort.direction } });
+  }
+
+  onDownload(id: string): void {
+    this.download.emit(id);
   }
 }

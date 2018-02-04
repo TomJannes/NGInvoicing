@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store';
 import { InvoiceSearchParams } from '../model/params/invoice-search-params';
 
+export const DOWNLOAD = '[Invoices] Download';
 export const SEARCH = '[Invoices] Search';
 export const UPDATE_SEARCH_PARAMS = '[Invoices] Update search parameters';
 export const RESET_SEARCH_PARAMS = '[Invoices] Reset search parameters';
@@ -32,4 +33,9 @@ export class SearchFailed implements Action {
     constructor(public payload: any) {}
 }
 
-export type Actions = Search | SearchSuccess | SearchFailed | UpdateSearchParameters | Reset;
+export class Download implements Action {
+    readonly type = DOWNLOAD;
+    constructor(public id: string) {}
+}
+
+export type Actions = Search | SearchSuccess | SearchFailed | UpdateSearchParameters | Reset | Download;

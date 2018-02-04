@@ -34,4 +34,8 @@ export class InvoiceOverviewComponent {
   onToggleFilterVisibility() {
     this.store.dispatch(new layout.ToggleFilterVisibility());
   }
+
+  onDownload(event: string) {
+    this.store.dispatch(new invoice.Download(event))
+  }
 }

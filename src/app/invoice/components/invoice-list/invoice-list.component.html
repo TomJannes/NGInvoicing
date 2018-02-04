@@ -18,7 +18,9 @@
       <button mat-icon-button [routerLink]="['/invoices/edit', element._id]">
         <mat-icon>mode_edit</mat-icon>
       </button>
-      <mat-icon></mat-icon>
+      <button mat-icon-button (click)="onDownload(element._id)">
+        <mat-icon>file_download</mat-icon>
+      </button>
     </mat-cell>
   </ng-container>
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

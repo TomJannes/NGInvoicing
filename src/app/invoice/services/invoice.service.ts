@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Invoice } from './../model/invoice';
-import { Headers, RequestOptionsArgs, RequestOptions } from '@angular/http';
-
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { QueryStringBuilder } from '../../shared/queryStringBuilder';
 import { InvoiceSearchParams } from '../model/params/invoice-search-params';
 import { InvoiceSearchResult } from '../model/results/invoice-search-result';
@@ -40,5 +38,17 @@ export class InvoiceService {
                     return res.body;
                 });
         }
+    }
+
+    download(id: string) {
+        var headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Accept': 'application/pdf'
+        });
+
+        return this.http$.get('/api/download/invoice/' + id, { headers: headers, responseType: 'blob',  observe: 'response'})
+            .map((res: any) => {
+                return res.body;
+            });
     }
 }

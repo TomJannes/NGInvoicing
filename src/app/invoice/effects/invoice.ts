@@ -11,10 +11,26 @@ import { InvoiceService } from '../services/invoice.service';
 import { Store, Action } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
+import 'rxjs/add/observable/of';
+
 import * as fromInvoice from '../reducers';
+import { switchMap } from 'rxjs/operator/switchMap';
+import { Download } from '../actions/invoice';
+import * as FileSaver from 'file-saver';
 
 @Injectable()
 export class InvoiceEffects {
+
+    @Effect({dispatch: false})
+    download$ = this.actions$.ofType<Download>(Act.DOWNLOAD)
+        .switchMap(query => {
+            return this.invoiceService.download(query.id)
+                .switchMap(result => {
+                    let filename = 'mypdf.pdf';
+                    FileSaver.saveAs(result);
+                    return Observable.of({});
+                })
+        });
 
     @Effect()
     invoices$ = this.actions$.ofType(Act.SEARCH)
