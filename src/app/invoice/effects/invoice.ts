@@ -25,9 +25,9 @@ export class InvoiceEffects {
     download$ = this.actions$.ofType<Download>(Act.DOWNLOAD)
         .switchMap(query => {
             return this.invoiceService.download(query.id)
-                .switchMap(result => {
-                    let filename = 'mypdf.pdf';
-                    FileSaver.saveAs(result);
+                .switchMap(res => {
+                    let filename = res.headers.get('content-disposition').replace('attachment; filename=', '').replace(/"/g, '');
+                    FileSaver.saveAs(res.body, filename);
                     return Observable.of({});
                 })
         });

@@ -48,7 +48,7 @@ export class InvoiceService {
 
         return this.http$.get('/api/download/invoice/' + id, { headers: headers, responseType: 'blob',  observe: 'response'})
             .map((res: any) => {
-                return res.body;
+                return res;
             });
     }
 }
