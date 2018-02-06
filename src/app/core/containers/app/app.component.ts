@@ -10,18 +10,18 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnDestroy {
-  showSnackbar: Subscription;
-  constructor(private actions$: Actions, public snackBar: MatSnackBar) {
-    this.showSnackbar = this.actions$.ofType<Act.ShowSnackbar>(Act.SHOW_SNACKBAR)
-      .map((data) => {
-        return data.payload;
-      })
-      .do((message) => {
-        snackBar.open(message, null, { duration: 5000 });
-      }).subscribe();
-  }
+  // showSnackbar: Subscription;
+  // constructor(private actions$: Actions, public snackBar: MatSnackBar) {
+  //   this.showSnackbar = this.actions$.ofType<Act.ShowSnackbar>(Act.SHOW_SNACKBAR)
+  //     .map((data) => {
+  //       return data.payload;
+  //     })
+  //     .do((message) => {
+  //       snackBar.open(message, null, { duration: 5000 });
+  //     }).subscribe();
+  // }
 
   ngOnDestroy(): void {
-    this.showSnackbar.unsubscribe();
+    //this.showSnackbar.unsubscribe();
   }
 }

@@ -8,23 +8,27 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { MaterialModule } from './../material.module';
-
-// import { StoreModule } from '@ngrx/store';
-// import { EffectsModule } from '@ngrx/effects';
+import { LoginComponent } from './containers/login/login.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AppAfterLoginComponent } from './containers/app-after-login/app-after-login.component';
 
 export const COMPONENTS = [
   ToolbarComponent,
   NavigationComponent,
   BreadcrumbComponent,
   AppComponent,
-  NotFoundPageComponent
+  AppAfterLoginComponent,
+  NotFoundPageComponent,
+  LoginComponent
 ];
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: COMPONENTS,
   exports: COMPONENTS,
@@ -32,8 +36,7 @@ export const COMPONENTS = [
 export class CoreModule {
   static forRoot() {
     return {
-      ngModule: CoreModule/*,
-      providers: [GoogleBooksService],*/
+      ngModule: CoreModule
     };
   }
 }
