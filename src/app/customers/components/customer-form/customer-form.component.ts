@@ -12,7 +12,7 @@ import { CustomerContactFormCardComponent } from '../customer-contact-form-card/
 @Component({
   selector: 'app-customer-form',
   templateUrl: './customer-form.component.html',
-  styleUrls: ['./customer-form.component.css'],
+  styleUrls: ['./customer-form.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
 export class CustomerFormComponent implements OnInit {

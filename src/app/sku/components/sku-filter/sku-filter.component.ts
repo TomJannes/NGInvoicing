@@ -6,7 +6,7 @@ import { SkuSearchParams } from '../../model/params/sku-search-params';
 @Component({
   selector: 'app-sku-filter',
   templateUrl: './sku-filter.component.html',
-  styleUrls: ['./sku-filter.component.css'],
+  styleUrls: ['./sku-filter.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
 export class SkuFilterComponent implements OnInit {

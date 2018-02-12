@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 import { MaterialModule } from './material.module';
@@ -23,6 +24,7 @@ import { RouterEffects } from './shared/router/router.effects';
   imports: [
     CommonModule,
     BrowserModule,
+    // FlexLayoutModule,
     MaterialModule,
     BrowserAnimationsModule,
     // HttpClientModule,

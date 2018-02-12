@@ -10,7 +10,7 @@ import { InvoiceState } from '../../model/invoice-state';
 @Component({
   selector: 'app-invoice-general-info-form-card',
   templateUrl: './invoice-general-info-form-card.component.html',
-  styleUrls: ['./invoice-general-info-form-card.component.css']
+  styleUrls: ['./invoice-general-info-form-card.component.scss']
 })
 export class InvoiceGeneralInfoFormCardComponent implements OnInit {
   @Input() customers: Customer[];

@@ -13,7 +13,7 @@ import { CustomerSearchParams } from '../../model/params/customer-search-params'
 @Component({
   selector: 'app-customer-overview',
   templateUrl: './customer-overview.component.html',
-  styleUrls: ['./customer-overview.component.css'],
+  styleUrls: ['./customer-overview.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
 export class CustomerOverviewComponent {

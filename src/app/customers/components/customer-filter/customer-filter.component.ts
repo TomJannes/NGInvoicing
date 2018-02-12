@@ -6,7 +6,7 @@ import { CustomerSearchParams } from '../../model/params/customer-search-params'
 @Component({
   selector: 'app-customer-filter',
   templateUrl: './customer-filter.component.html',
-  styleUrls: ['./customer-filter.component.css'],
+  styleUrls: ['./customer-filter.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
 export class CustomerFilterComponent implements OnInit {

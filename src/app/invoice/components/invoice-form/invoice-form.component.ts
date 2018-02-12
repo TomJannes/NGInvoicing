@@ -14,7 +14,7 @@ import { InvoiceState } from '../../model/invoice-state';
 @Component({
   selector: 'app-invoice-form',
   templateUrl: './invoice-form.component.html',
-  styleUrls: ['./invoice-form.component.css'],
+  styleUrls: ['./invoice-form.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
 export class InvoiceFormComponent implements OnInit, OnChanges {

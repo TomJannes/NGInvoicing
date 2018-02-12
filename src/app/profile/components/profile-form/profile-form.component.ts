@@ -10,7 +10,7 @@ import { Profile } from '../../model/profile';
 @Component({
   selector: 'app-profile-form',
   templateUrl: './profile-form.component.html',
-  styleUrls: ['./profile-form.component.css'],
+  styleUrls: ['./profile-form.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
 export class ProfileFormComponent implements OnInit {

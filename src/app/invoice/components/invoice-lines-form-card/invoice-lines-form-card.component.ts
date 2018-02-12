@@ -5,7 +5,7 @@ import { InvoiceLine } from '../../model/invoice';
 @Component({
   selector: 'app-invoice-lines-form-card',
   templateUrl: './invoice-lines-form-card.component.html',
-  styleUrls: ['./invoice-lines-form-card.component.css']
+  styleUrls: ['./invoice-lines-form-card.component.scss']
 })
 export class InvoiceLinesFormCardComponent implements OnInit {
   @Output() remove: EventEmitter<number> = new EventEmitter<number>();

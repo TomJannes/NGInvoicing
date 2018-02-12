@@ -10,7 +10,7 @@ import * as RouterActions from '../../../shared/router/router.actions';
 @Component({
   selector: 'app-customer-detail',
   templateUrl: './customer-detail.component.html',
-  styleUrls: ['./customer-detail.component.css'],
+  styleUrls: ['./customer-detail.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
 export class CustomerDetailComponent {

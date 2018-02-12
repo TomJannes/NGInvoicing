@@ -9,7 +9,7 @@ import * as RouterActions from '../../../shared/router/router.actions';
 @Component({
   selector: 'app-sku-detail',
   templateUrl: './sku-detail.component.html',
-  styleUrls: ['./sku-detail.component.css'],
+  styleUrls: ['./sku-detail.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
 export class SkuDetailComponent {

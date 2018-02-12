@@ -12,7 +12,7 @@ import { SkuSearchParams } from '../../model/params/sku-search-params';
 @Component({
   selector: 'app-sku-list',
   templateUrl: './sku-list.component.html',
-  styleUrls: ['./sku-list.component.css'],
+  styleUrls: ['./sku-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkuListComponent implements OnInit {

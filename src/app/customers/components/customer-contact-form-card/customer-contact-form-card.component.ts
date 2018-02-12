@@ -5,7 +5,7 @@ import { Contact } from '../../model/customer';
 @Component({
   selector: 'app-customer-contact-form-card',
   templateUrl: './customer-contact-form-card.component.html',
-  styleUrls: ['./customer-contact-form-card.component.css']
+  styleUrls: ['./customer-contact-form-card.component.scss']
 })
 export class CustomerContactFormCardComponent implements OnInit {
   @Output() remove: EventEmitter<number> = new EventEmitter<number>();

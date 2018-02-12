@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs/Subscription';
 @Component({
   selector: 'app-after-login',
   templateUrl: './app-after-login.component.html',
-  styleUrls: ['./app-after-login.component.css']
+  styleUrls: ['./app-after-login.component.scss']
 })
 export class AppAfterLoginComponent implements OnDestroy {
   showSnackbar: Subscription;

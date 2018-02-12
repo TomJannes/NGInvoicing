@@ -14,7 +14,7 @@ import { InvoiceState } from '../../model/invoice-state';
 @Component({
   selector: 'app-invoice-detail',
   templateUrl: './invoice-detail.component.html',
-  styleUrls: ['./invoice-detail.component.css'],
+  styleUrls: ['./invoice-detail.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
 export class InvoiceDetailComponent {

@@ -12,7 +12,7 @@ import { CustomerSearchParams } from '../../model/params/customer-search-params'
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html',
-  styleUrls: ['./customer-list.component.css'],
+  styleUrls: ['./customer-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CustomerListComponent implements OnInit {

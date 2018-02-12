@@ -10,7 +10,7 @@ import * as layout from '../../actions/layout';
 @Component({
   selector: 'app-sku-overview',
   templateUrl: './sku-overview.component.html',
-  styleUrls: ['./sku-overview.component.css']
+  styleUrls: ['./sku-overview.component.scss']
 })
 export class SkuOverviewComponent {
   data$: Observable<SkuSearchResult>;
@@ -46,7 +46,7 @@ export class SkuOverviewComponent {
 // @Component({
 //   selector: 'app-customer-overview',
 //   templateUrl: './customer-overview.component.html',
-//   styleUrls: ['./customer-overview.component.css'],
+//   styleUrls: ['./customer-overview.component.scss'],
 //   encapsulation: ViewEncapsulation.Emulated
 // })
 // export class CustomerOverviewComponent {

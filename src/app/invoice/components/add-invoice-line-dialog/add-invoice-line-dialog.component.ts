@@ -8,7 +8,7 @@ import { Sku } from '../../../sku/model/sku';
 @Component({
   selector: 'app-add-invoice-line-dialog',
   templateUrl: './add-invoice-line-dialog.component.html',
-  styleUrls: ['./add-invoice-line-dialog.component.css']
+  styleUrls: ['./add-invoice-line-dialog.component.scss']
 })
 export class AddInvoiceLineDialogComponent implements OnInit {
   filteredSkus: Observable<Sku[]>;

@@ -5,7 +5,7 @@ import { Breadcrumb } from './breadcrumb.model';
 @Component({
   selector: 'app-breadcrumb',
   templateUrl: './breadcrumb.component.html',
-  styleUrls: ['./breadcrumb.component.css'],
+  styleUrls: ['./breadcrumb.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
 export class BreadcrumbComponent {

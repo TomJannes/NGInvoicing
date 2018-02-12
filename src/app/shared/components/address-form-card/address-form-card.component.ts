@@ -6,7 +6,7 @@ import { ErrorStateMatcher } from '@angular/material';
 @Component({
   selector: 'app-address-form-card',
   templateUrl: './address-form-card.component.html',
-  styleUrls: ['./address-form-card.component.css'],
+  styleUrls: ['./address-form-card.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
 export class AddressFormCardComponent implements OnInit {

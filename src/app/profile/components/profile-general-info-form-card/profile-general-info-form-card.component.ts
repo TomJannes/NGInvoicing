@@ -4,7 +4,7 @@ import { ControlContainer } from '@angular/forms';
 @Component({
   selector: 'app-profile-general-info-form-card',
   templateUrl: './profile-general-info-form-card.component.html',
-  styleUrls: ['./profile-general-info-form-card.component.css']
+  styleUrls: ['./profile-general-info-form-card.component.scss']
 })
 export class ProfileGeneralInfoFormCardComponent implements OnInit {
 

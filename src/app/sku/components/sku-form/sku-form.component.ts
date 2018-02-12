@@ -9,7 +9,7 @@ import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 @Component({
   selector: 'app-sku-form',
   templateUrl: './sku-form.component.html',
-  styleUrls: ['./sku-form.component.css'],
+  styleUrls: ['./sku-form.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
 export class SkuFormComponent implements OnInit {

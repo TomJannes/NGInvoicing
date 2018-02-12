@@ -9,7 +9,7 @@ import * as RouterActions from '../../../shared/router/router.actions';
 @Component({
   selector: 'app-profile-detail',
   templateUrl: './profile-detail.component.html',
-  styleUrls: ['./profile-detail.component.css'],
+  styleUrls: ['./profile-detail.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
 export class ProfileDetailComponent {

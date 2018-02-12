@@ -5,7 +5,7 @@ import { CustomerTypeSearchResult } from '../../model/results/customer-type-sear
 @Component({
   selector: 'app-customer-general-info-form-card',
   templateUrl: './customer-general-info-form-card.component.html',
-  styleUrls: ['./customer-general-info-form-card.component.css']
+  styleUrls: ['./customer-general-info-form-card.component.scss']
 })
 export class CustomerGeneralInfoFormCardComponent implements OnInit {
   @Input() customerTypes: CustomerTypeSearchResult;

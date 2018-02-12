@@ -12,7 +12,7 @@ import { InvoiceSearchParams } from '../../model/params/invoice-search-params';
 @Component({
   selector: 'app-invoice-list',
   templateUrl: './invoice-list.component.html',
-  styleUrls: ['./invoice-list.component.css'],
+  styleUrls: ['./invoice-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InvoiceListComponent implements OnInit {

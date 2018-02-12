@@ -6,7 +6,7 @@ import { InvoiceSearchParams } from '../../model/params/invoice-search-params';
 @Component({
   selector: 'app-invoice-filter',
   templateUrl: './invoice-filter.component.html',
-  styleUrls: ['./invoice-filter.component.css'],
+  styleUrls: ['./invoice-filter.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
 export class InvoiceFilterComponent implements OnInit {

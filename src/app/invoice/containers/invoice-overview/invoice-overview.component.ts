@@ -13,7 +13,7 @@ import { InvoiceSearchParams } from '../../model/params/invoice-search-params';
 @Component({
   selector: 'app-invoice-overview',
   templateUrl: './invoice-overview.component.html',
-  styleUrls: ['./invoice-overview.component.css'],
+  styleUrls: ['./invoice-overview.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
 export class InvoiceOverviewComponent {
