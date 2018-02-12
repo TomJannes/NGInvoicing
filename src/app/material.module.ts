@@ -16,7 +16,8 @@ import {
   MatAutocompleteModule,
   MatDialogModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatProgressSpinnerModule
    } from '@angular/material';
 import { NgModule } from '@angular/core';
 
@@ -26,9 +27,9 @@ import { AppDateAdapter, APP_DATE_FORMATS } from './shared/datepicker';
 
 @NgModule({
   // tslint:disable-next-line:max-line-length
-  imports: [MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule, MatListModule, MatIconModule, MatCardModule, MatTableModule, MatPaginatorModule, MatSortModule, MatInputModule, MatFormFieldModule, MatSelectModule, MatSnackBarModule, MatAutocompleteModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule],
+  imports: [MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule, MatListModule, MatIconModule, MatCardModule, MatTableModule, MatPaginatorModule, MatSortModule, MatInputModule, MatFormFieldModule, MatSelectModule, MatSnackBarModule, MatAutocompleteModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule, MatProgressSpinnerModule],
   // tslint:disable-next-line:max-line-length
-  exports: [MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule, MatListModule, MatIconModule, MatCardModule, MatTableModule, MatPaginatorModule, MatSortModule, MatInputModule, MatFormFieldModule, MatSelectModule, MatSnackBarModule, MatAutocompleteModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule],
+  exports: [MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule, MatListModule, MatIconModule, MatCardModule, MatTableModule, MatPaginatorModule, MatSortModule, MatInputModule, MatFormFieldModule, MatSelectModule, MatSnackBarModule, MatAutocompleteModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule, MatProgressSpinnerModule],
   providers: [
     { provide: DateAdapter, useClass: AppDateAdapter },
     { provide: MAT_DATE_FORMATS, useValue: APP_DATE_FORMATS }

@@ -11,7 +11,6 @@ import { Store, Action } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
 import * as fromSkuDetail from '../reducers';
-import { Get, Save, SaveSuccess } from '../actions/sku-detail';
 import { RouterStateUrl } from '../../shared/utils';
 import * as RouterActions from '../../shared/router/router.actions';
 
@@ -19,7 +18,7 @@ import * as RouterActions from '../../shared/router/router.actions';
 export class SkuDetailEffects {
 
     @Effect()
-    skuDetail$ = this.actions$.ofType<Get>(Act.GET)
+    skuDetail$ = this.actions$.ofType<Act.Get>(Act.GET)
         .switchMap(query => {
             return this.skuService.getSku(query.id)
                 .switchMap(data => {
@@ -35,7 +34,7 @@ export class SkuDetailEffects {
         });
 
     @Effect()
-    skuDetailSave$ = this.actions$.ofType<Save>(Act.SAVE)
+    skuDetailSave$ = this.actions$.ofType<Act.Save>(Act.SAVE)
         .withLatestFrom(this.store)
         .map(([action, state]) => state.sku.detail.sku)
         .switchMap(sku => {
@@ -55,7 +54,7 @@ export class SkuDetailEffects {
         });
 
         @Effect()
-        redirectAfterSuccessfullSave$ = this.actions$.ofType<SaveSuccess>(Act.SAVE_SUCCESS)
+        redirectAfterSuccessfullSave$ = this.actions$.ofType<Act.SaveSuccess>(Act.SAVE_SUCCESS)
             .switchMap(() => {
                 return [
                     new RouterActions.Go({ path: ['/skus/overview'] })

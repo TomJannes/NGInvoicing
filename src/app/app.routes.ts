@@ -1,10 +1,10 @@
 import { NotFoundPageComponent } from './core/containers/not-found-page/not-found-page.component';
 import { Routes } from '@angular/router';
-import { LoginComponent } from './core/containers/login/login.component';
 import { AppAfterLoginComponent } from './core/containers/app-after-login/app-after-login.component';
+import { SignInComponent } from './core/containers/sign-in/sign-in.component';
 
 export const routes: Routes = [
-  { path: 'login', component: LoginComponent, data: { breadcrumb: 'Log in' } },
+  { path: 'sign-in', component: SignInComponent, data: { breadcrumb: 'Sign in' } },
   {
     path: '', component: AppAfterLoginComponent, children: [
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
