@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Effect, Actions, toPayload } from '@ngrx/effects';
+import { Effect, Actions } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
 
 import { Observable } from 'rxjs/Observable';
@@ -12,6 +12,7 @@ import 'rxjs/add/operator/switchMap';
 
 import { UsersService } from './../services/users.service';
 import * as Act from './../actions/users';
+import { ofType } from '@ngrx/effects/src/actions';
 
 @Injectable()
 export class UsersEffects {
@@ -20,7 +21,7 @@ export class UsersEffects {
   authenticate$: Observable<Action> = this.actions
     .ofType<Act.Authenticate>(Act.AUTHENTICATE)
     .debounceTime(500)
-    .map(toPayload)
+    .map(action => action.payload)
     .switchMap(payload => {
       return this.userService.authenticate(payload.email, payload.password)
         .map(user => new Act.AuthenticationSuccess({user: user}))
@@ -30,7 +31,7 @@ export class UsersEffects {
   @Effect()
   authenticated$: Observable<Action> = this.actions
     .ofType<Act.Authenticated>(Act.AUTHENTICATED)
-    .map(toPayload)
+    .map(action => action.payload)
     .switchMap(payload => {
       return this.userService.authenticatedUser()
         .map(user => new Act.AuthenticatedSuccess({authenticated: (user !== null), user: user}))
@@ -41,7 +42,7 @@ export class UsersEffects {
   createUser$: Observable<Action> = this.actions
     .ofType<Act.SignUp>(Act.SIGN_UP)
     .debounceTime(500)
-    .map(toPayload)
+    .map(action => action.payload)
     .switchMap(payload => {
       return this.userService.create(payload.user)
         .map(user => new Act.SignUpSuccess({user: user}))
@@ -51,7 +52,7 @@ export class UsersEffects {
   @Effect()
   signOut$: Observable<Action> = this.actions
     .ofType<Act.SignOut>(Act.SIGN_OUT)
-    .map(toPayload)
+    .map(action => action.payload)
     .switchMap(payload => {
       return this.userService.signout()
         .map(value => new Act.SignOutSuccess())
