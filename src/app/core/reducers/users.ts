@@ -1,7 +1,7 @@
 import * as user from './../actions/users';
 import { User } from './../models/user';
 
-export interface State {
+export interface UsersState {
   authenticated: boolean;
   error?: string;
   loaded: boolean;
@@ -9,13 +9,13 @@ export interface State {
   user?: User;
 }
 
-const initialState: State = {
+const initialState: UsersState = {
   authenticated: null,
   loaded: false,
   loading: false
 };
 
-export function reducer(state: any = initialState, action: user.Actions): State {
+export function reducer(state: UsersState = initialState, action: user.Actions): UsersState {
 
   switch (action.type) {
     case user.AUTHENTICATE:
@@ -87,10 +87,10 @@ export function reducer(state: any = initialState, action: user.Actions): State 
 }
 
 
-export const isAuthenticated = (state: State) => state.authenticated;
-export const isAuthenticatedLoaded = (state: State) => state.loaded;
-export const getAuthenticatedUser = (state: State) => state.user;
-export const getAuthenticationError = (state: State) => state.error;
-export const isLoading = (state: State) => state.loading;
-export const getSignOutError = (state: State) => state.error;
-export const getSignUpError = (state: State) => state.error;
+export const isAuthenticated = (state: UsersState) => state.authenticated;
+export const isAuthenticatedLoaded = (state: UsersState) => state.loaded;
+export const getAuthenticatedUser = (state: UsersState) => state.user;
+export const getAuthenticationError = (state: UsersState) => state.error;
+export const isLoading = (state: UsersState) => state.loading;
+export const getSignOutError = (state: UsersState) => state.error;
+export const getSignUpError = (state: UsersState) => state.error;

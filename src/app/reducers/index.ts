@@ -25,6 +25,7 @@ import { storeFreeze } from 'ngrx-store-freeze';
 
 import * as fromNavigation from '../core/reducers/navigation';
 import * as fromNavigationItem from '../core/reducers/navigation-item';
+import * as fromUsers from '../core/reducers/users';
 
 /**
  * As mentioned, we treat each reducer like a table in a database. This means
@@ -34,6 +35,7 @@ export interface State {
   navigation: fromNavigation.NavigationState;
   navigationItem: fromNavigationItem.NavigationItemState;
   routerReducer: fromRouter.RouterReducerState<RouterStateUrl>;
+  users: fromUsers.UsersState;
 }
 
 /**
@@ -44,7 +46,8 @@ export interface State {
 export const reducers: ActionReducerMap<State> = {
   navigation: fromNavigation.reducer,
   navigationItem: fromNavigationItem.reducer,
-  routerReducer: fromRouter.routerReducer
+  routerReducer: fromRouter.routerReducer,
+  users: fromUsers.reducer
 };
 
 // console.log all actions
@@ -82,3 +85,11 @@ export const getNavigationItems = createSelector(
   getNavigationItemState,
   fromNavigationItem.getNavigationItems
 );
+
+/**
+ * User Reducers
+ */
+export const getUsersState = createFeatureSelector<fromUsers.UsersState>('users');
+export const getUserIsLoading = createSelector(getUsersState, fromUsers.isLoading);
+export const getAuthenticationError = createSelector(getUsersState, fromUsers.getAuthenticationError);
+export const getUserIsAuthenticated = createSelector(getUsersState, fromUsers.getAuthenticationError);

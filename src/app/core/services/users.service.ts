@@ -1,5 +1,9 @@
+
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { Headers, RequestOptionsArgs, RequestOptions } from '@angular/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+
 import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/throw';
 import { User } from './../models/user';
@@ -16,7 +20,7 @@ MOCK_USER.password = 'password';
  */
 @Injectable()
 export class UsersService {
-
+  constructor(private http$: HttpClient) { }
   /**
    * True if authenticated
    * @type
@@ -31,14 +35,18 @@ export class UsersService {
    * @returns {Observable<User>} The authenticated user observable.
    */
   public authenticate(email: string, password: string): Observable<User> {
-    // Normally you would do an HTTP request to determine to
-    // attempt authenticating the user using the supplied credentials.
-    if (email === MOCK_USER.email && password === MOCK_USER.password) {
-      this._authenticated = true;
-      return Observable.of(MOCK_USER);
-    }
+    return this.http$.post('/api/login', {email: email, password: password}, { observe: 'response' })
+      .map((res: any) => {
+        return res.body;
+      });
+    // // Normally you would do an HTTP request to determine to
+    // // attempt authenticating the user using the supplied credentials.
+    // if (email === MOCK_USER.email && password === MOCK_USER.password) {
+    //   this._authenticated = true;
+    //   return Observable.of(MOCK_USER);
+    // }
 
-    return Observable.throw(new Error('Invalid email or password'));
+    // return Observable.throw(new Error('Invalid email or password'));
   }
 
   /**

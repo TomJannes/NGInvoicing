@@ -14,7 +14,7 @@ import 'rxjs/add/operator/takeWhile';
 import { Authenticate } from './../../actions/users';
 
 // reducers
-import { getAuthenticationError, isAuthenticated, isLoading, State } from './../../reducers/users';
+import { getUserIsAuthenticated, getAuthenticationError, getUserIsLoading, State } from './../../../reducers';
 
 @Component({
   selector: 'app-sign-in',
@@ -40,14 +40,14 @@ export class SignInComponent implements OnDestroy, OnInit {
     });
 
     this.error = this.store.select(getAuthenticationError);
-    this.loading = this.store.select(isLoading);
-    this.store.select(isAuthenticated)
-      .takeWhile(() => this.alive)
-      .filter(authenticated => authenticated)
-      .subscribe(value => {
-        alert('works !!!!')
-        //this.store.dispatch(go('/users/my-account'));
-      });
+    this.loading = this.store.select(getUserIsLoading);
+    // this.store.select(getUserIsAuthenticated)
+    //   .takeWhile(() => this.alive)
+    //   .filter(authenticated => authenticated)
+    //   .subscribe(value => {
+    //     alert('works !!!!')
+    //     //this.store.dispatch(go('/users/my-account'));
+    //   });
   }
 
   public ngOnDestroy() {

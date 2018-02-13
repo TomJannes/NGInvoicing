@@ -11,6 +11,8 @@ import { MaterialModule } from './../material.module';
 import { SignInComponent } from './containers/sign-in/sign-in.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppAfterLoginComponent } from './containers/app-after-login/app-after-login.component';
+import { UsersService } from './services/users.service';
+import { HttpClientModule } from '@angular/common/http';
 
 export const COMPONENTS = [
   ToolbarComponent,
@@ -26,12 +28,16 @@ export const COMPONENTS = [
   imports: [
     CommonModule,
     RouterModule,
+    HttpClientModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule
   ],
   declarations: COMPONENTS,
   exports: COMPONENTS,
+  providers:[
+    UsersService
+  ]
 })
 export class CoreModule {
   static forRoot() {

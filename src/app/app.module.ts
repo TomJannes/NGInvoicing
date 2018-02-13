@@ -5,8 +5,6 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-// import { FlexLayoutModule } from '@angular/flex-layout';
-
 
 import { MaterialModule } from './material.module';
 import { NavigationComponent } from './core/components/navigation/navigation.component';
@@ -19,15 +17,14 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppComponent } from './core/containers/app/app.component';
 import { reducers, metaReducers } from './reducers';
 import { RouterEffects } from './shared/router/router.effects';
+import { UsersEffects } from './core/effects/users';
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
-    // FlexLayoutModule,
     MaterialModule,
     BrowserAnimationsModule,
-    // HttpClientModule,
     RouterModule.forRoot(routes, { useHash: true }),
 
     /**
@@ -63,7 +60,7 @@ import { RouterEffects } from './shared/router/router.effects';
      *
      * See: https://github.com/ngrx/platform/blob/master/docs/effects/api.md#forroot
      */
-    EffectsModule.forRoot([RouterEffects]),
+    EffectsModule.forRoot([RouterEffects, UsersEffects]),
     CoreModule.forRoot()
   ],
   providers: [
