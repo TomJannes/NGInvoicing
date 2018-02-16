@@ -24,7 +24,7 @@ export class UsersEffects {
     .map(action => action.payload)
     .switchMap(payload => {
       return this.userService.authenticate(payload.email, payload.password)
-        .map(user => new Act.AuthenticationSuccess({user: user}))
+        .map(data => new Act.AuthenticationSuccess(data))
         .catch(error => Observable.of(new Act.AuthenticationError({error: error})));
     });
 

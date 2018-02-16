@@ -50,7 +50,7 @@ export class AuthenticationError implements Action {
 export class AuthenticationSuccess implements Action {
     public type: string = AUTHENTICATE_SUCCESS;
 
-    constructor(public payload: { user: User }) { }
+    constructor(public payload: any) { }
 }
 
 export class SignOut implements Action {

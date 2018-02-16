@@ -7,6 +7,7 @@ export interface UsersState {
   loaded: boolean;
   loading: boolean;
   user?: User;
+  token?: string;
 }
 
 const initialState: UsersState = {
@@ -35,7 +36,7 @@ export function reducer(state: UsersState = initialState, action: user.Actions):
       return Object.assign({}, state, {
         authenticated: action.payload.authenticated,
         loaded: true,
-        user: action.payload.user
+        token: action.payload.token
       });
 
     case user.AUTHENTICATE_ERROR:
@@ -48,30 +49,27 @@ export function reducer(state: UsersState = initialState, action: user.Actions):
 
     case user.AUTHENTICATE_SUCCESS:
     case user.SIGN_UP_SUCCESS:
-      const data: User = action.payload.user;
-      if (data === null) {
-        return state;
-      }
-
       return Object.assign({}, state, {
         authenticated: true,
         error: undefined,
         loading: false,
-        user: data
+        token: action.payload.token
       });
 
     case user.SIGN_OUT_ERROR:
       return Object.assign({}, state, {
         authenticated: true,
         error: action.payload.error.message,
-        user: undefined
+        user: undefined,
+        token: undefined
       });
 
     case user.SIGN_OUT_SUCCESS:
       return Object.assign({}, state, {
         authenticated: false,
         error: undefined,
-        user: undefined
+        user: undefined,
+        token: undefined
       });
 
     case user.SIGN_UP:
