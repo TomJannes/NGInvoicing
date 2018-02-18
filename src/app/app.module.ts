@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MaterialModule } from './material.module';
 import { NavigationComponent } from './core/components/navigation/navigation.component';
@@ -18,11 +19,13 @@ import { AppComponent } from './core/containers/app/app.component';
 import { reducers, metaReducers } from './reducers';
 import { RouterEffects } from './shared/router/router.effects';
 import { UsersEffects } from './core/effects/users';
+import { httpInterceptorProviders } from './core/Interceptors/http-interceptor-providers';
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
+    HttpClientModule,
     MaterialModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes, { useHash: true }),
@@ -69,7 +72,8 @@ import { UsersEffects } from './core/effects/users';
      * A custom RouterStateSerializer is used to parse the `RouterStateSnapshot` provided
      * by `@ngrx/router-store` to include only the desired pieces of the snapshot.
      */
-    { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer }
+    { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer },
+    httpInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })

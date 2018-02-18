@@ -9,7 +9,6 @@ import { reducers } from './reducers';
 import { ProfileEffects } from './effects/profile';
 import { EffectsModule } from '@ngrx/effects';
 import { ProfileService } from './services/profile.service';
-import { HttpClientModule } from '@angular/common/http';
 
 import { SharedModule } from '../shared/shared.module';
 import { ProfileDetailComponent } from './containers/profile-detail/profile-detail.component';
@@ -21,7 +20,6 @@ import { ProfileDetailEditGuard } from './containers/profile-detail/profile-deta
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     ProfileRouting,

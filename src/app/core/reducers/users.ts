@@ -25,22 +25,7 @@ export function reducer(state: UsersState = initialState, action: user.Actions):
         loading: true
       });
 
-    case user.AUTHENTICATED_ERROR:
-      return Object.assign({}, state, {
-        authenticated: false,
-        error: action.payload.error.message,
-        loaded: true
-      });
-
-    case user.AUTHENTICATED_SUCCESS:
-      return Object.assign({}, state, {
-        authenticated: action.payload.authenticated,
-        loaded: true,
-        token: action.payload.token
-      });
-
     case user.AUTHENTICATE_ERROR:
-    case user.SIGN_UP_ERROR:
       return Object.assign({}, state, {
         authenticated: false,
         error: action.payload.error.message,
@@ -48,7 +33,6 @@ export function reducer(state: UsersState = initialState, action: user.Actions):
       });
 
     case user.AUTHENTICATE_SUCCESS:
-    case user.SIGN_UP_SUCCESS:
       return Object.assign({}, state, {
         authenticated: true,
         error: undefined,
@@ -72,13 +56,6 @@ export function reducer(state: UsersState = initialState, action: user.Actions):
         token: undefined
       });
 
-    case user.SIGN_UP:
-      return Object.assign({}, state, {
-        authenticated: false,
-        error: undefined,
-        loading: true
-      });
-
     default:
       return state;
   }
@@ -86,9 +63,8 @@ export function reducer(state: UsersState = initialState, action: user.Actions):
 
 
 export const isAuthenticated = (state: UsersState) => state.authenticated;
-export const isAuthenticatedLoaded = (state: UsersState) => state.loaded;
 export const getAuthenticatedUser = (state: UsersState) => state.user;
 export const getAuthenticationError = (state: UsersState) => state.error;
 export const isLoading = (state: UsersState) => state.loading;
 export const getSignOutError = (state: UsersState) => state.error;
-export const getSignUpError = (state: UsersState) => state.error;
+export const getToken = (state: UsersState) => state.token;

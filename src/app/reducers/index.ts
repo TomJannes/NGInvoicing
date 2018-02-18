@@ -92,4 +92,5 @@ export const getNavigationItems = createSelector(
 export const getUsersState = createFeatureSelector<fromUsers.UsersState>('users');
 export const getUserIsLoading = createSelector(getUsersState, fromUsers.isLoading);
 export const getAuthenticationError = createSelector(getUsersState, fromUsers.getAuthenticationError);
-export const getUserIsAuthenticated = createSelector(getUsersState, fromUsers.getAuthenticationError);
+export const getUserIsAuthenticated = createSelector(getUsersState, fromUsers.isAuthenticated);
+export const getToken = createSelector(getUsersState, fromUsers.getToken);

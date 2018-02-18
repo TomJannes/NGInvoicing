@@ -11,7 +11,7 @@ import { CustomerDetailEffects } from './effects/customer-detail';
 import { CustomerTypeEffects } from './effects/customer-type';
 import { EffectsModule } from '@ngrx/effects';
 import { CustomerService } from './services/customer.service';
-import { HttpClientModule } from '@angular/common/http';
+// import { HttpClientModule } from '@angular/common/http';
 
 import { CustomerOverviewComponent } from './containers/customer-overview/customer-overview.component';
 import { CustomerListComponent } from './components/customer-list/customer-list.component';
@@ -31,7 +31,7 @@ import { CustomerContactFormCardComponent } from './components/customer-contact-
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule,
+    //HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     CustomerRouting,

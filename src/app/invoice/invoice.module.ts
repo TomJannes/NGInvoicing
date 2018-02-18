@@ -8,7 +8,6 @@ import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers';
 import { InvoiceEffects } from './effects/invoice';
 import { EffectsModule } from '@ngrx/effects';
-import { HttpClientModule } from '@angular/common/http';
 import { InvoiceOverviewComponent } from './containers/invoice-overview/invoice-overview.component';
 import { SharedModule } from '../shared/shared.module';
 import { InvoiceOverviewGuard } from './containers/invoice-overview/invoice-overview.guard';
@@ -31,7 +30,6 @@ import { InvoiceStateService } from './services/invoice-state.service';
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     InvoiceRouting,

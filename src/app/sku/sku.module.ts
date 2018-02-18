@@ -8,7 +8,6 @@ import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers';
 import { SkuEffects } from './effects/sku';
 import { EffectsModule } from '@ngrx/effects';
-import { HttpClientModule } from '@angular/common/http';
 import { SkuOverviewComponent } from './containers/sku-overview/sku-overview.component';
 import { SharedModule } from '../shared/shared.module';
 import { SkuOverviewGuard } from './containers/sku-overview/sku-overview.guard';
@@ -25,7 +24,6 @@ import { SkuDetailEffects } from './effects/sku-detail';
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     SkuRouting,

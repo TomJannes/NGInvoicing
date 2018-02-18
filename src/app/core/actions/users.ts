@@ -7,38 +7,25 @@ import { User } from './../models/user';
 export const AUTHENTICATE = '[Users] Authenticate';
 export const AUTHENTICATE_ERROR = '[Users] Authentication error';
 export const AUTHENTICATE_SUCCESS = '[Users] Authentication success';
-export const AUTHENTICATED = '[Users] Authenticated';
-export const AUTHENTICATED_ERROR = '[Users] Authenticated error';
-export const AUTHENTICATED_SUCCESS = '[Users] Authenticated success';
+
+// export const AUTHENTICATED = '[Users] Authenticated';
+// export const AUTHENTICATED_ERROR = '[Users] Authenticated error';
+// export const AUTHENTICATED_SUCCESS = '[Users] Authenticated success';
 export const SIGN_OUT = '[Users] Sign off';
 export const SIGN_OUT_ERROR = '[Users] Sign off error';
 export const SIGN_OUT_SUCCESS = '[Users] Sign off success';
-export const SIGN_UP = '[Users] Sign up';
-export const SIGN_UP_ERROR = '[Users] Sign up error';
-export const SIGN_UP_SUCCESS = '[Users] Sign up success';
+// export const SIGN_UP = '[Users] Sign up';
+// export const SIGN_UP_ERROR = '[Users] Sign up error';
+// export const SIGN_UP_SUCCESS = '[Users] Sign up success';
+
+export const LOAD_CURRENT_USER = '[Users] Load current user';
+export const LOAD_CURRENT_USER_ERROR = '[Users] Load current user error';
+export const LOAD_CURRENT_USER_SUCCESS = '[Users] Load current user success';
 
 export class Authenticate implements Action {
     readonly type: string = AUTHENTICATE;
 
     constructor(public payload: { email: string, password: string }) { }
-}
-
-export class Authenticated implements Action {
-    readonly type: string = AUTHENTICATED;
-
-    constructor(public payload?: { token?: string }) { }
-}
-
-export class AuthenticatedSuccess implements Action {
-    public type: string = AUTHENTICATED_SUCCESS;
-
-    constructor(public payload: { authenticated: boolean, user: User }) { }
-}
-
-export class AuthenticatedError implements Action {
-    public type: string = AUTHENTICATED_ERROR;
-
-    constructor(public payload?: any) { }
 }
 
 export class AuthenticationError implements Action {
@@ -51,6 +38,22 @@ export class AuthenticationSuccess implements Action {
     public type: string = AUTHENTICATE_SUCCESS;
 
     constructor(public payload: any) { }
+}
+
+export class LoadCurrentUser implements Action {
+    public type: string = LOAD_CURRENT_USER;
+
+    constructor(public payload?: any) { }
+}
+
+export class LoadCurrentUserSuccess implements Action {
+    public type: string = LOAD_CURRENT_USER_SUCCESS;
+    constructor(public payload?: any) { }
+}
+
+export class LoadCurrentUserError implements Action {
+    public type: string = LOAD_CURRENT_USER_ERROR;
+    constructor(public payload?: any) { }
 }
 
 export class SignOut implements Action {
@@ -68,29 +71,13 @@ export class SignOutSuccess implements Action {
     constructor(public payload?: any) { }
 }
 
-export class SignUp implements Action {
-    public type: string = SIGN_UP;
-    constructor(public payload: { user: User }) { }
-}
-
-export class SignUpError implements Action {
-    public type: string = SIGN_UP_ERROR;
-    constructor(public payload?: any) { }
-}
-
-export class SignUpSuccess implements Action {
-    public type: string = SIGN_UP_SUCCESS;
-    constructor(public payload: { user: User }) { }
-}
-
-export type Actions
-    =
+export type Actions = 
     Authenticate
-    | Authenticated
-    | AuthenticatedError
-    | AuthenticatedSuccess
     | AuthenticationError
     | AuthenticationSuccess
-    | SignUp
-    | SignUpError
-    | SignUpSuccess;
+    | LoadCurrentUser
+    | LoadCurrentUserSuccess
+    | LoadCurrentUserError
+    | SignOut
+    | SignOutError
+    | SignOutSuccess;
