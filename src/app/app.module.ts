@@ -20,6 +20,7 @@ import { reducers, metaReducers } from './reducers';
 import { RouterEffects } from './shared/router/router.effects';
 import { UsersEffects } from './core/effects/users';
 import { httpInterceptorProviders } from './core/Interceptors/http-interceptor-providers';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { httpInterceptorProviders } from './core/Interceptors/http-interceptor-p
     HttpClientModule,
     MaterialModule,
     BrowserAnimationsModule,
+    SharedModule,
     RouterModule.forRoot(routes, { useHash: true }),
 
     /**

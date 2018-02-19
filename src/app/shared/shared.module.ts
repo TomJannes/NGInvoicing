@@ -4,6 +4,7 @@ import { AddressFormCardComponent } from './components/address-form-card/address
 import { MaterialModule } from '../material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { AuthenticationGuard } from './guards/authentication-guard';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { CommonModule } from '@angular/common';
     AddressFormCardComponent
   ],
   providers: [
-    
+    AuthenticationGuard
   ]
 })
 export class SharedModule {

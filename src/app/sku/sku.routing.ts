@@ -5,12 +5,13 @@ import { SkuOverviewGuard } from './containers/sku-overview/sku-overview.guard';
 import { SkuDetailCreateGuard } from './containers/sku-detail/sku-detail-create.guard';
 import { SkuDetailEditGuard } from './containers/sku-detail/sku-detail-edit.guard';
 import { SkuDetailComponent } from './containers/sku-detail/sku-detail.component';
+import { AuthenticationGuard } from '../shared/guards/authentication-guard';
 
 const routes: Routes = [
     { path: '', redirectTo: 'overview', pathMatch: 'full' },
-    { path: 'overview', component: SkuOverviewComponent, canActivate: [SkuOverviewGuard], data: { breadcrumb: 'Overview' } },
-    { path: 'create', component: SkuDetailComponent, canActivate: [SkuDetailCreateGuard], data: { breadcrumb: 'Create' } },
-    { path: 'edit/:id', component: SkuDetailComponent, canActivate: [SkuDetailEditGuard], data: { breadcrumb: 'Edit' } }
+    { path: 'overview', component: SkuOverviewComponent, canActivate: [AuthenticationGuard, SkuOverviewGuard], data: { breadcrumb: 'Overview' } },
+    { path: 'create', component: SkuDetailComponent, canActivate: [AuthenticationGuard, SkuDetailCreateGuard], data: { breadcrumb: 'Create' } },
+    { path: 'edit/:id', component: SkuDetailComponent, canActivate: [AuthenticationGuard, SkuDetailEditGuard], data: { breadcrumb: 'Edit' } }
 ];
 
 @NgModule({
