@@ -54,8 +54,8 @@ export class CustomerFormComponent implements OnInit {
     return this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      email: '',
-      phone: '',
+      email: ['', Validators.required],
+      phone: ['', Validators.required],
       info: ''
     });
   }
