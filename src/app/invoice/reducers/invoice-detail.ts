@@ -49,9 +49,9 @@ export function reducer(state = initialState, action: invoice.Actions): State {
                 invoice: {
                     ...state.invoice,
                     ...action.payload.data,
-                    total: total.toFixed(2),
-                    totalInc: totalInc.toFixed(2),
-                    totalVat: totalVat.toFixed(2)
+                    total: parseFloat(total.toFixed(2)),
+                    totalInc: parseFloat(totalInc.toFixed(2)),
+                    totalVat: parseFloat(totalVat.toFixed(2))
                 } 
             };
         case invoice.GET_SUCCESS:

@@ -46,7 +46,7 @@ export class InvoiceService {
             'Accept': 'application/pdf'
         });
 
-        return this.http$.get('/api/download/invoice/' + id, { headers: headers, responseType: 'blob',  observe: 'response'})
+        return this.http$.get('/api/invoice/download/' + id, { headers: headers, responseType: 'blob',  observe: 'response'})
             .map((res: any) => {
                 return res;
             });

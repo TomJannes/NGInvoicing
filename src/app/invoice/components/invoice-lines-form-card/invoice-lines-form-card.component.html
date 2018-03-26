@@ -34,27 +34,27 @@
             </td>
             <td class="amount">{{line.value.amount}}</td>
             <td class="name">{{line.value.sku?.name}}</td>
-            <td class="price">{{line.value.price}}</td>
-            <td class="vat">{{line.value.vat}} %</td>
-            <td class="total">{{line.value.total}}</td>
-            <td class="totalInc">{{line.value.totalInc}}</td>
+            <td class="price">{{line.value.price?.toFixed(2)}}</td>
+            <td class="vat">{{line.value.vat.toFixed(2)}} %</td>
+            <td class="total">{{line.value.total?.toFixed(2)}}</td>
+            <td class="totalInc">{{line.value.totalInc?.toFixed(2)}}</td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
             <td colspan="5"></td>
             <td class="invoicetotal">Total excl VAT</td>
-            <td class="invoicetotal">{{controlContainer.control.get('total').value}}</td>
+            <td class="invoicetotal">{{controlContainer.control.get('total').value.toFixed(2)}}</td>
           </tr>
           <tr>
             <td colspan="5"></td>
             <td class="invoicetotal">Total VAT</td>
-            <td class="invoicetotal">{{controlContainer.control.get('totalVat').value}}</td>
+            <td class="invoicetotal">{{controlContainer.control.get('totalVat').value.toFixed(2)}}</td>
           </tr>
           <tr>
             <td colspan="5"></td>
             <td class="invoicetotal">Total incl VAT</td>
-            <td class="invoicetotal">{{controlContainer.control.get('totalInc').value}}</td>
+            <td class="invoicetotal">{{controlContainer.control.get('totalInc').value.toFixed(2)}}</td>
           </tr>
         </tfoot>
       </table>
