@@ -35,7 +35,7 @@ export class UsersService {
    * @returns {Observable<User>} The authenticated user observable.
    */
   public authenticate(email: string, password: string): Observable<User> {
-    return this.http$.post('/api/login', {email: email, password: password}, { observe: 'response' })
+    return this.http$.post('/api/auth/login', {email: email, password: password}, { observe: 'response' })
       .map((res: any) => {
         return res.body;
       });

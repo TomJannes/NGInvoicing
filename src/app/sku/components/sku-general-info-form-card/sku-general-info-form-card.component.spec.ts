@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CustomerGeneralInfoFormCardComponent } from './customer-general-info-form-card.component';
+import { SkuGeneralInfoFormCardComponent } from './sku-general-info-form-card.component';
 
 describe('GeneralInfoFormCardComponent', () => {
-  let component: CustomerGeneralInfoFormCardComponent;
-  let fixture: ComponentFixture<CustomerGeneralInfoFormCardComponent>;
+  let component: SkuGeneralInfoFormCardComponent;
+  let fixture: ComponentFixture<SkuGeneralInfoFormCardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CustomerGeneralInfoFormCardComponent ]
+      declarations: [ SkuGeneralInfoFormCardComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CustomerGeneralInfoFormCardComponent);
+    fixture = TestBed.createComponent(SkuGeneralInfoFormCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
