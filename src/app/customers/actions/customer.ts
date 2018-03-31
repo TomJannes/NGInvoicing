@@ -2,6 +2,7 @@ import { Action } from '@ngrx/store';
 import { CustomerSearchParams } from '../model/params/customer-search-params';
 
 export const SEARCH = '[Customers] Search';
+export const DELETE = '[Customers] Delete';
 export const UPDATE_SEARCH_PARAMS = '[Customers] Update search parameters';
 export const RESET_SEARCH_PARAMS = '[Customers] Reset search parameters';
 export const SEARCH_SUCCESS = '[Customers] Search Success';
@@ -10,6 +11,11 @@ export const SEARCH_FAILED = '[Customers] Search Failed';
 export class Search implements Action {
     readonly type = SEARCH;
     constructor() {}
+}
+
+export class Delete implements Action {
+    readonly type = DELETE;
+    constructor(public payload: any) {}
 }
 
 export class UpdateSearchParameters implements Action {

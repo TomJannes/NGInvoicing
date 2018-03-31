@@ -27,6 +27,10 @@ export class CustomerOverviewComponent {
     this.showFilter$ = this.store.select(fromCustomer.getFilterLayout);
   }
 
+  onDelete(id: string) {
+    this.store.dispatch(new customer.Delete(id));
+  }
+
   onSearch(event: CustomerSearchParams) {
     this.store.dispatch(new customer.UpdateSearchParameters(event));
   }

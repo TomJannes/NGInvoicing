@@ -27,6 +27,7 @@ export class CustomerListComponent implements OnInit {
   }
   @Input() parameters: CustomerSearchParams;
   @Output() search: EventEmitter<CustomerSearchParams> = new EventEmitter();
+  @Output() delete: EventEmitter<string> = new EventEmitter();
 
   @ViewChild(MatSort) sort: MatSort;
 
@@ -55,5 +56,9 @@ export class CustomerListComponent implements OnInit {
 
   onSort(sort: Sort): void {
     this.searchParams.next({ ...this.parameters, sorting: { field: sort.active, order: sort.direction } });
+  }
+
+  onDelete(id: string) {
+    this.delete.emit(id);
   }
 }

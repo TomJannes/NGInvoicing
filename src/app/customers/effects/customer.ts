@@ -34,6 +34,17 @@ export class CustomerEffects {
                 });
         });
 
+        @Effect()
+    deleteCustomers$ = this.actions$.ofType(Act.DELETE)
+        .switchMap((params: Act.Delete) => {
+            return this.customerService.deleteCustomer(params.payload)
+                .switchMap(data => {
+                    return [
+                        new Act.Search()
+                    ];
+                });
+        });
+
     @Effect()
     updateSearchParameters$ = this.actions$.ofType(Act.UPDATE_SEARCH_PARAMS, Act.RESET_SEARCH_PARAMS)
         .switchMap(() => {

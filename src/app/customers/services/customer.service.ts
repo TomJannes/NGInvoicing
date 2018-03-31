@@ -28,6 +28,13 @@ export class CustomerService {
             });
     }
 
+    deleteCustomer(id: string): Observable<Customer> {
+        return this.http$.delete('/api/customer/' + id, { observe: 'response' })
+            .map((res: HttpResponse<Customer>) => {
+                return res.body;
+            });
+    }
+
     saveCustomer(customer: Customer): Observable<Customer> {
         if (customer._id !== null) {
             return this.http$.put('/api/customer/' + customer._id, customer, { observe: 'response' })
