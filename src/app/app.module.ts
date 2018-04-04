@@ -4,7 +4,7 @@ import { environment } from './../environments/environment.prod';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MaterialModule } from './material.module';
@@ -75,8 +75,13 @@ import { SharedModule } from './shared/shared.module';
      * by `@ngrx/router-store` to include only the desired pieces of the snapshot.
      */
     { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer },
+    { provide: 'LOCALSTORAGE', useFactory: getLocalStorage },
     httpInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function getLocalStorage() {
+  return (typeof window !== "undefined") ? window.localStorage : null;
+}
