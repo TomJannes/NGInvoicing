@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Effect, Actions } from '@ngrx/effects';
 import * as Act from '../actions/sku';
+import * as GlobalActions from '../../shared/actions/global-actions';
 
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/catch';
@@ -46,7 +47,12 @@ export class SkuEffects {
             return this.skuService.deleteSku(params.payload)
                 .switchMap(data => {
                     return [
-                        new Act.Search()
+                        new Act.Search(),
+                        new GlobalActions.ShowSnackbar('The stock keeping unit was deleted successfully')
+                    ];
+                }).catch((error) => {
+                    return [
+                        new GlobalActions.ShowSnackbar('An error occurred while deleting the stock keeping unit')
                     ];
                 });
         });
