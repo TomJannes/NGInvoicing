@@ -21,6 +21,7 @@ import { RouterEffects } from './shared/router/router.effects';
 import { UsersEffects } from './core/effects/users';
 import { httpInterceptorProviders } from './core/Interceptors/http-interceptor-providers';
 import { SharedModule } from './shared/shared.module';
+import { AppEffects } from './core/effects/application';
 
 @NgModule({
   imports: [
@@ -65,7 +66,7 @@ import { SharedModule } from './shared/shared.module';
      *
      * See: https://github.com/ngrx/platform/blob/master/docs/effects/api.md#forroot
      */
-    EffectsModule.forRoot([RouterEffects, UsersEffects]),
+    EffectsModule.forRoot([RouterEffects, UsersEffects, AppEffects]),
     CoreModule.forRoot()
   ],
   providers: [

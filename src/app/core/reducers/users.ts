@@ -1,7 +1,5 @@
 import * as user from './../actions/users';
 import { User } from './../models/user';
-import { PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 export interface UsersState {
   authenticated: boolean;
@@ -17,10 +15,6 @@ const initialState: UsersState = {
   loaded: false,
   loading: false
 };
-
-export function getInitialState() {
-  
-}
 
 export function reducer(state: UsersState = initialState, action: user.Actions): UsersState {
 

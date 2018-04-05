@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Location } from '@angular/common';
 
 import { Effect, Actions } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
@@ -26,8 +27,7 @@ export class UsersEffects {
     .switchMap(payload => {
       return this.userService.authenticate(payload.email, payload.password)
         .switchMap(data => [
-          new Act.AuthenticationSuccess(data)//,
-          //new Act.LoadCurrentUser()
+          new Act.AuthenticationSuccess(data)
         ])
         .catch(error => Observable.of(new Act.AuthenticationError({ error: error })));
     });
@@ -43,15 +43,18 @@ export class UsersEffects {
         .catch(error => Observable.of(new Act.SignOutError({ error: error })));
     });
 
-    @Effect()
-    redirectAfterSuccessfullSignIn$ = this.actions$.ofType<Act.AuthenticationSuccess>(Act.AUTHENTICATE_SUCCESS)
-        .switchMap(() => {
-            return [
-                new RouterActions.Go({ path: ['/dashboard'] })
-            ];
-        });
+  @Effect()
+  redirectAfterSuccessfullSignIn$ = this.actions$.ofType<Act.AuthenticationSuccess>(Act.AUTHENTICATE_SUCCESS)
+    .switchMap(() => {
+      var loc = this.location.path();
+      if (loc !== '/sign-in') {
+        return [new RouterActions.Go({ path: [loc] })];
+      }
+      return [new RouterActions.Go({ path: ['/dashboard'] })];
+    });
 
   constructor(private actions$: Actions,
+    private location: Location,
     private userService: UsersService) {
   }
 }
