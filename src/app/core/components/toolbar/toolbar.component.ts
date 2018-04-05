@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import { Store } from '@ngrx/store';
 import * as fromCore from '../../../reducers';
 import * as navigation from '../../actions/navigation';
+import * as user from '../../actions/users';
 
 @Component({
   selector: 'app-toolbar',
@@ -17,5 +18,9 @@ export class ToolbarComponent {
 
   toggle() {
     this.store.dispatch(new navigation.ToggleSideNav());
+  }
+
+  onSignOut() {
+    this.store.dispatch(new user.SignOut());
   }
 }

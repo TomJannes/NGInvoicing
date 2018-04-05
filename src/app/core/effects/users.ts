@@ -36,10 +36,12 @@ export class UsersEffects {
   @Effect()
   signOut$: Observable<Action> = this.actions$
     .ofType<Act.SignOut>(Act.SIGN_OUT)
-    .map(action => action.payload)
-    .switchMap(payload => {
+    .switchMap(() => {
       return this.userService.signout()
-        .map(value => new Act.SignOutSuccess())
+        .switchMap(() => [
+          new Act.SignOutSuccess(),
+          new RouterActions.Go({ path: ['/sign-in'] })
+        ])
         .catch(error => Observable.of(new Act.SignOutError({ error: error })));
     });
 
