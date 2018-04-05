@@ -34,7 +34,7 @@ export class CustomerEffects {
                 });
         });
 
-        @Effect()
+    @Effect()
     deleteCustomers$ = this.actions$.ofType(Act.DELETE)
         .switchMap((params: Act.Delete) => {
             return this.customerService.deleteCustomer(params.payload)

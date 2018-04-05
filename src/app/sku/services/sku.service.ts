@@ -41,4 +41,11 @@ export class SkuService {
                 });
         }
     }
+
+    deleteSku(id: string): Observable<Sku> {
+        return this.http$.delete('/api/sku/' + id, { observe: 'response' })
+            .map((res: HttpResponse<Sku>) => {
+                return res.body;
+            });
+    }
 }

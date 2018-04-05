@@ -27,6 +27,7 @@ export class SkuListComponent implements OnInit {
   }
   @Input() parameters: SkuSearchParams;
   @Output() search: EventEmitter<SkuSearchParams> = new EventEmitter();
+  @Output() delete: EventEmitter<string> = new EventEmitter();
 
   @ViewChild(MatSort) sort: MatSort;
 
@@ -55,5 +56,9 @@ export class SkuListComponent implements OnInit {
 
   onSort(sort: Sort): void {
     this.searchParams.next({ ...this.parameters, sorting: { field: sort.active, order: sort.direction } });
+  }
+
+  onDelete(id: string) {
+    this.delete.emit(id);
   }
 }

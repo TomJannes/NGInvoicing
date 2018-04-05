@@ -40,5 +40,16 @@ export class SkuEffects {
             ];
         });
 
+    @Effect()
+    deleteCustomers$ = this.actions$.ofType(Act.DELETE)
+        .switchMap((params: Act.Delete) => {
+            return this.skuService.deleteSku(params.payload)
+                .switchMap(data => {
+                    return [
+                        new Act.Search()
+                    ];
+                });
+        });
+
     constructor(private actions$: Actions, private skuService: SkuService, private store: Store<fromSku.State>) { }
 }

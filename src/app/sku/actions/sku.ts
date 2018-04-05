@@ -2,6 +2,7 @@ import { Action } from '@ngrx/store';
 import { SkuSearchParams } from '../model/params/sku-search-params';
 
 export const SEARCH = '[Skus] Search';
+export const DELETE = '[Skus] Delete';
 export const UPDATE_SEARCH_PARAMS = '[Skus] Update search parameters';
 export const RESET_SEARCH_PARAMS = '[Skus] Reset search parameters';
 export const SEARCH_SUCCESS = '[Skus] Search Success';
@@ -15,6 +16,11 @@ export class Search implements Action {
 export class UpdateSearchParameters implements Action {
     readonly type = UPDATE_SEARCH_PARAMS;
     constructor(public payload: SkuSearchParams) {}
+}
+
+export class Delete implements Action {
+    readonly type = DELETE;
+    constructor(public payload: any) {}
 }
 
 export class Reset implements Action {

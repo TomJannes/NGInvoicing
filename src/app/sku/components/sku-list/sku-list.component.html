@@ -18,7 +18,9 @@
       <button mat-icon-button [routerLink]="['/skus/edit', element._id]">
         <mat-icon>mode_edit</mat-icon>
       </button>
-      <mat-icon></mat-icon>
+      <button mat-icon-button (click)="onDelete(element._id)">
+        <mat-icon>delete</mat-icon>
+      </button>
     </mat-cell>
   </ng-container>
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
