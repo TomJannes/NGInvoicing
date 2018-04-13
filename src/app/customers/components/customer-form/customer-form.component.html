@@ -3,7 +3,27 @@
     <mat-card-content>
       <app-customer-general-info-form-card [customerTypes]="customerTypes"></app-customer-general-info-form-card>
       <app-address-form-card formGroupName="address"></app-address-form-card>
-      <app-customer-contact-form-card (add)="onAdd()" (remove)="onRemove($event)"></app-customer-contact-form-card>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <div class="header-container">
+              <div class="title">Details</div>
+            </div>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="contactgrid">
+          <mat-tab-group>
+            <mat-tab label="Contacts">
+              <app-customer-contact-form-card (add)="onAdd()" (remove)="onRemove($event)"></app-customer-contact-form-card>
+            </mat-tab>
+            <mat-tab label="Linked skus">
+
+            </mat-tab>
+          </mat-tab-group>
+        </mat-card-content>
+
+      </mat-card>
+
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button type="submit" [disabled]="form.invalid">Save</button>

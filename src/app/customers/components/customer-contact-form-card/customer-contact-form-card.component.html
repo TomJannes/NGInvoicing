@@ -1,34 +1,25 @@
 <ng-container [formGroup]="controlContainer.control">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>
-        <div class="header-container">
-          <div class="title">Contacts</div>
-          <div class="buttons">
-            <button mat-icon-button type="button" (click)="onAddNew()" [disabled]="controlContainer.control.invalid">
-              <mat-icon>add_circle_outline</mat-icon>
-            </button>
-          </div>
-        </div>
-      </mat-card-title>
-    </mat-card-header>
-    <mat-card-content class="contactgrid">
-      <div formArrayName="contacts" *ngFor="let contact of controlContainer.control.get('contacts')['controls']; let i = index;let last = last">
-        <div [formGroupName]="i">
-          <mat-card>
-            <mat-card-header>
-              <mat-card-title>
-                <div class="header-container">
-                  <div class="title">{{controlContainer.control.value.contacts[i].firstName}} {{controlContainer.control.value.contacts[i].lastName}}</div>
-                  <div class="buttons">
-                    <button mat-icon-button type="button" (click)="onRemove(i)">
-                      <mat-icon>remove_circle_outline</mat-icon>
-                    </button>
-                  </div>
+  <div style="display: flex">
+    <div>
+      <button mat-icon-button type="button" (click)="onAddNew()" [disabled]="controlContainer.control.invalid">
+        <mat-icon>add_circle_outline</mat-icon>
+      </button>
+    </div>
+    <div class="full-width">
+      <mat-accordion>
+        <div formArrayName="contacts" *ngFor="let contact of controlContainer.control.get('contacts')['controls']; let i = index;let last = last">
+          <div [formGroupName]="i">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <div>
+                  <button mat-icon-button type="button" (click)="onRemove(i)">
+                    <mat-icon>remove_circle_outline</mat-icon>
+                  </button>
                 </div>
-              </mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
+                <div class="center-content">
+                  {{controlContainer.control.value.contacts[i].firstName}} {{controlContainer.control.value.contacts[i].lastName}}
+                </div>
+              </mat-expansion-panel-header>
               <mat-form-field>
                 <input matInput required formControlName="firstName" placeholder="Firstname">
                 <mat-error>This field is required</mat-error>
@@ -48,10 +39,11 @@
               <mat-form-field>
                 <input matInput formControlName="info" placeholder="Info">
               </mat-form-field>
-            </mat-card-content>
-          </mat-card>
+            </mat-expansion-panel>
+          </div>
         </div>
-      </div>
-    </mat-card-content>
-  </mat-card>
+      </mat-accordion>
+    </div>
+  </div>
+
 </ng-container>

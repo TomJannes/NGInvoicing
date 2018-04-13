@@ -1,16 +1,11 @@
-.contactgrid {
+.center-content {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start
+    align-items: center;
 }
 
-.contactgrid > div {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 50%;
-  }
+.full-width {
+    width: 100%;
+}
 
 mat-form-field {
     width: 45%;
