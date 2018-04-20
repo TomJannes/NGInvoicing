@@ -12,7 +12,7 @@ const initialState: State = {
     isLoading: false,
     isLoadSuccess: false,
     selectedId: null,
-    customer: { _id: null, contacts: [] }
+    customer: { _id: null, contacts: [], linkedSkus: [] }
 };
 
 export function reducer(state = initialState, action: customer.Actions): State {

@@ -1,5 +1,6 @@
 import { CustomerType } from './customer-type';
 import { Address } from '../../shared/models/address';
+import { Sku } from '../../sku/model/sku';
 
 export interface Customer {
     _id: string;
@@ -8,6 +9,7 @@ export interface Customer {
     customerType?: CustomerType;
     address?: Address;
     contacts: Contact[];
+    linkedSkus: Sku[];
 }
 
 export interface Contact {

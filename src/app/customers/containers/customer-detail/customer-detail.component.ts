@@ -4,8 +4,10 @@ import { CustomerTypeSearchResult } from '../../model/results/customer-type-sear
 import { Customer } from '../../model/customer';
 import { Store } from '@ngrx/store';
 import * as fromCustomer from '../../reducers';
+import * as fromSku from '../../../sku/reducers';
 import * as CustomerActions from '../../actions/customer-detail';
 import * as RouterActions from '../../../shared/router/router.actions';
+import { Sku } from '../../../sku/model/sku';
 
 @Component({
   selector: 'app-customer-detail',
@@ -15,11 +17,13 @@ import * as RouterActions from '../../../shared/router/router.actions';
 })
 export class CustomerDetailComponent {
   customerTypes$: Observable<CustomerTypeSearchResult>;
+  skus$: Observable<Sku[]>;
   selectedCustomer$: Observable<Customer>;
 
   constructor(private store: Store<fromCustomer.State>) {
     this.customerTypes$ = this.store.select(fromCustomer.getCustomerTypes).take(1);
     this.selectedCustomer$ = this.store.select(fromCustomer.getSelectedCustomer).take(1);
+    this.skus$ = this.store.select(fromSku.getSkus).map((val) => val.skus).take(1);
   }
 
   save() {

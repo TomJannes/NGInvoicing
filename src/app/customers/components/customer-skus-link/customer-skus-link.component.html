@@ -1,0 +1,18 @@
+<ng-container [formGroup]="controlContainer.control">
+  <div style="display: flex">
+    <div>
+      <button mat-icon-button type="button" (click)="onAddNew()" [disabled]="controlContainer.control.invalid">
+        <mat-icon>add_circle_outline</mat-icon>
+      </button>
+    </div>
+    <div class="full-width">
+      <mat-accordion>
+        <div formArrayName="linkedSkus" *ngFor="let sku of controlContainer.control.get('linkedSkus')['controls']; let i = index;let last = last">
+          <div [formGroupName]="i">
+            <app-customer-sku-detail (remove)="onRemove(i)" [skus]="skus"></app-customer-sku-detail>
+          </div>
+        </div>
+      </mat-accordion>
+    </div>
+  </div>
+</ng-container>

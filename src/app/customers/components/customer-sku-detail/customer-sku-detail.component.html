@@ -1,0 +1,30 @@
+<ng-container [formGroup]="controlContainer.control">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <div>
+        <button mat-icon-button type="button" (click)="onRemove()">
+          <mat-icon>remove_circle_outline</mat-icon>
+        </button>
+      </div>
+      <div class="center-content">
+        {{controlContainer.control.value.name}}
+      </div>
+    </mat-expansion-panel-header>
+    <mat-form-field>
+      <mat-select placeholder="Skus" [compareWith]="compare" [value]="selectedSku" (selectionChange)="skuSelectionChanged($event)">
+        <mat-option *ngFor="let sku of filteredSkus | async" [value]="sku">{{ sku.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="number" required formControlName="vat" placeholder="Vat">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="number" required formControlName="price" placeholder="Price">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="number" required placeholder="Price incl Vat" [value]="controlContainer.control.value.price + (controlContainer.control.value.price / 100 * controlContainer.control.value.vat) | number:'1.2-2'">
+    </mat-form-field>
+    <input type="hidden" formControlName="name">
+    <input type="hidden" formControlName="_id">
+  </mat-expansion-panel>
+</ng-container>

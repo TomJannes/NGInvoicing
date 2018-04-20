@@ -8,6 +8,7 @@ import { EventEmitter } from '@angular/core';
 import { FormHelper } from '../../../shared/form-helper';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { CustomerContactFormCardComponent } from '../customer-contact-form-card/customer-contact-form-card.component';
+import { Sku } from '../../../sku/model/sku';
 
 @Component({
   selector: 'app-customer-form',
@@ -18,6 +19,7 @@ import { CustomerContactFormCardComponent } from '../customer-contact-form-card/
 export class CustomerFormComponent implements OnInit {
   form: FormGroup;
   @Input() customerTypes: CustomerTypeSearchResult;
+  @Input() skus: Observable<Sku[]>;
   @Input() customer: Customer;
   @Output() save: EventEmitter<any> = new EventEmitter<any>();
   @Output() cancel: EventEmitter<any> = new EventEmitter<any>();
@@ -39,14 +41,29 @@ export class CustomerFormComponent implements OnInit {
         zip: ['', Validators.required],
         place: ['', Validators.required]
       }),
-      contacts: fb.array([])
+      contacts: fb.array([]),
+      linkedSkus: fb.array([])
     });
   }
 
   ngOnInit() {
-    const control = <FormArray>this.form.controls.contacts;
+    const contactsControl = <FormArray>this.form.controls.contacts;
     this.customer.contacts.forEach(x => {
-      control.push(this.createContact());
+      contactsControl.push(this.createContact());
+    });
+
+    const linkedSkusControl = <FormArray>this.form.controls.linkedSkus;
+    this.customer.linkedSkus.forEach(x => {
+      linkedSkusControl.push(this.createLinkedSku());
+    });
+  }
+
+  createLinkedSku(): FormGroup {
+    return this.fb.group({
+      _id: '',
+      name: ['', Validators.required],
+      vat: ['', Validators.required],
+      price: ['', Validators.required]
     });
   }
 
@@ -58,6 +75,16 @@ export class CustomerFormComponent implements OnInit {
       phone: ['', Validators.required],
       info: ''
     });
+  }
+
+  onAddLinkedSku() {
+    const control = <FormArray>this.form.controls.linkedSkus;
+    control.push(this.createLinkedSku());
+  }
+
+  onRemoveLinkedSku(index: number) {
+    const control = <FormArray>this.form.controls.linkedSkus;
+    control.removeAt(index);
   }
 
   onAdd() {
@@ -79,5 +106,9 @@ export class CustomerFormComponent implements OnInit {
 
   onCancel() {
     this.cancel.emit(null);
+  }
+
+  huh() {
+    let x = this.form;
   }
 }

@@ -26,6 +26,9 @@ import { CustomerOverviewGuard } from './containers/customer-overview/customer-o
 // tslint:disable-next-line:max-line-length
 import { CustomerGeneralInfoFormCardComponent } from './components/customer-general-info-form-card/customer-general-info-form-card.component';
 import { CustomerContactFormCardComponent } from './components/customer-contact-form-card/customer-contact-form-card.component';
+import { CustomerSkusLinkComponent } from './components/customer-skus-link/customer-skus-link.component';
+import { SkuModule } from '../sku/sku.module';
+import { CustomerSkuDetailComponent } from './components/customer-sku-detail/customer-sku-detail.component';
 
 
 @NgModule({
@@ -35,6 +38,7 @@ import { CustomerContactFormCardComponent } from './components/customer-contact-
     FormsModule,
     ReactiveFormsModule,
     CustomerRouting,
+    SkuModule,
     StoreModule.forFeature('customer', reducers),
     EffectsModule.forFeature([CustomerEffects, CustomerDetailEffects, CustomerTypeEffects]),
     MaterialModule,
@@ -47,7 +51,9 @@ import { CustomerContactFormCardComponent } from './components/customer-contact-
     CustomerDetailComponent,
     CustomerFilterComponent,
     CustomerGeneralInfoFormCardComponent,
-    CustomerContactFormCardComponent
+    CustomerContactFormCardComponent,
+    CustomerSkusLinkComponent,
+    CustomerSkuDetailComponent
   ],
   providers: [
     CustomerService,
