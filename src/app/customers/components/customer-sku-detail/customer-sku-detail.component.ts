@@ -10,8 +10,12 @@ import { ControlContainer, FormArray } from '@angular/forms';
 })
 export class CustomerSkuDetailComponent implements OnInit {
   @Input() skus: Observable<Sku[]>;
+  @Input() openedIndex: number;
+  @Input() index: number;
   @Output() remove: EventEmitter<any> = new EventEmitter<any>();
   @Output() add: EventEmitter<any> = new EventEmitter<any>();
+  @Output() open: EventEmitter<number> = new EventEmitter<number>();
+
   filteredSkus: Observable<Sku[]>;
   skusforLines: Observable<Sku[]>[];
 
@@ -34,5 +38,9 @@ export class CustomerSkuDetailComponent implements OnInit {
 
   compare(val1, val2) {
     return val1 && val2 && val1._id === val2._id;
+  }
+
+  onOpen() {
+    this.open.emit(this.index);
   }
 }

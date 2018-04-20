@@ -12,7 +12,7 @@ export class CustomerSkusLinkComponent implements OnInit {
   @Input() skus: Observable<Sku[]>;
   @Output() remove: EventEmitter<number> = new EventEmitter<number>();
   @Output() add: EventEmitter<any> = new EventEmitter<any>();
-
+  openedIndex: number;
   constructor(public controlContainer: ControlContainer) { }
 
   ngOnInit() {
@@ -24,6 +24,10 @@ export class CustomerSkusLinkComponent implements OnInit {
 
   onAddNew() {
     this.add.emit(null);
+    this.openedIndex = this.controlContainer.value.linkedSkus.length - 1;
   }
 
+  onOpen(i) {
+    this.openedIndex = i;
+  }
 }
